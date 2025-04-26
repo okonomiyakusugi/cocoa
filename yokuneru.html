@@ -3,60 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>専門家が教える！赤ちゃんぐっすり睡眠ガイド</title>
+<title>【完全版】専門家が教える！赤ちゃんぐっすり睡眠ガイド</title>
 <style>
   body {
     font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    background-color: #f4f7f6; /* Slightly softer background */
     color: #333;
   }
   .container {
     max-width: 800px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 20px 30px; /* Add more horizontal padding */
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Softer shadow */
+    border-radius: 10px; /* Slightly more rounded */
   }
   h1 {
     text-align: center;
     color: #6a1b9a; /* Purple */
-    margin-bottom: 15px; /* 少し狭める */
-    font-size: 2em; /* モバイルでも見やすいように調整 */
+    margin-bottom: 15px;
+    font-size: 2.2em; /* Slightly larger */
+    font-weight: 700;
   }
   .subtitle {
       text-align: center;
       color: #555;
       margin-bottom: 30px;
-      font-size: 0.9em;
+      font-size: 1em; /* Slightly larger subtitle */
   }
   h2 {
     color: #8e44ad; /* Light Purple */
-    border-bottom: 2px solid #d8bfd8; /* Thistle */
-    padding-bottom: 10px;
-    margin-top: 40px;
-    font-size: 1.5em;
+    border-bottom: 3px solid #d8bfd8; /* Thicker border */
+    padding-bottom: 12px;
+    margin-top: 50px; /* Increase spacing between sections */
+    margin-bottom: 25px; /* Add space after heading */
+    font-size: 1.7em; /* Larger heading */
+    font-weight: 600;
     display: flex;
     align-items: center;
   }
   h2::before {
     content: "🌙"; /* Moon icon */
-    margin-right: 10px;
-    font-size: 1.2em;
+    margin-right: 12px;
+    font-size: 1.3em;
   }
   h3 {
     color: #9b59b6; /* Amethyst */
-    margin-top: 25px;
-    font-size: 1.2em;
-    border-left: 5px solid #d8bfd8;
-    padding-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.3em; /* Larger subheading */
+    border-left: 6px solid #d8bfd8;
+    padding-left: 12px;
+    font-weight: 600;
   }
   p, ul, li {
-    margin-bottom: 15px;
-    font-size: 1em; /* ベースフォントサイズ */
+    margin-bottom: 18px; /* Increase spacing */
+    font-size: 1.05em; /* Slightly larger base font */
   }
   ul {
     list-style: none;
@@ -64,35 +69,43 @@
   }
   ul li {
     position: relative;
-    padding-left: 25px;
-    margin-bottom: 10px;
+    padding-left: 30px; /* Increase indent */
+    margin-bottom: 12px;
   }
   ul li::before {
     content: "✔";
     position: absolute;
     left: 0;
+    top: 2px; /* Adjust vertical alignment */
     color: #2ecc71; /* Emerald Green */
     font-weight: bold;
+    font-size: 1.1em;
   }
   strong {
-    color: #e74c3c; /* Alizarin Red */
+    /* color: #e74c3c; Alizarin Red - Removed default red strong */
     font-weight: bold;
   }
+  .highlight { /* Use for emphasis instead of strong */
+      color: #e74c3c; /* Alizarin Red */
+      font-weight: bold;
+  }
+
   .expert-comment {
     background-color: #e8f5e9; /* Light Green */
-    border-left: 5px solid #4caf50; /* Green */
-    padding: 15px;
-    margin: 20px 0;
-    border-radius: 5px;
+    border-left: 6px solid #4caf50; /* Green */
+    padding: 20px; /* More padding */
+    margin: 25px 0;
+    border-radius: 8px;
     font-style: italic;
   }
   .expert-comment::before {
-    content: "👩‍⚕️ 専門家アドバイス: ";
+    content: "👩‍⚕️ 専門家アドバイス:";
     font-weight: bold;
     font-style: normal;
     color: #388e3c; /* Darker Green */
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    font-size: 1.1em;
   }
   .ng-list li::before {
     content: "❌"; /* Cross Mark */
@@ -100,59 +113,78 @@
   }
   .important-point {
     background-color: #fff3e0; /* Light Orange */
-    border: 1px dashed #ff9800; /* Orange */
-    padding: 15px;
-    border-radius: 5px;
-    margin: 20px 0;
+    border: 2px dashed #ff9800; /* Orange */
+    padding: 20px;
+    border-radius: 8px;
+    margin: 25px 0;
   }
-  .important-point strong {
+  .important-point strong, .important-point .highlight {
       color: #f57c00; /* Darker Orange */
   }
+  .important-point h3 { /* Heading inside important point */
+      color: #f57c00;
+      margin-top: 0;
+      border-left: none;
+      padding-left: 0;
+      font-size: 1.2em;
+  }
+   .important-point h3::before {
+       content: "⚠️ ";
+   }
 
   /* アコーディオン（折りたたみ） */
   details {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border: 1px solid #d8bfd8;
-    border-radius: 5px;
+    border-radius: 8px; /* More rounded */
     background-color: #faf5ff; /* Very Light Purple */
+    overflow: hidden; /* Ensures smooth transition */
   }
   details summary {
-    padding: 15px;
+    padding: 18px 20px; /* Adjust padding */
     cursor: pointer;
     font-weight: bold;
     color: #6a1b9a;
     list-style: none; /* Remove default marker */
     position: relative;
+    background-color: #f3e8fd; /* Slightly darker summary background */
+    transition: background-color 0.2s ease;
+  }
+   details summary:hover {
+      background-color: #e9d8f5;
   }
   details summary::before { /* Custom marker */
       content: '▶';
       position: absolute;
-      left: 10px;
-      font-size: 0.8em;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.9em;
       transition: transform 0.2s ease-in-out;
   }
   details[open] summary::before {
-      transform: rotate(90deg);
+      transform: translateY(-50%) rotate(90deg);
   }
 
   details summary::-webkit-details-marker { /* Hide default marker for Chrome/Safari */
     display: none;
   }
   details div {
-    padding: 0 20px 20px 20px;
+    padding: 20px 25px; /* Add more padding */
+    border-top: 1px solid #d8bfd8; /* Separator line */
   }
 
   /* 月齢ガイド テーブル */
   table {
       width: 100%;
       border-collapse: collapse;
-      margin: 20px 0;
+      margin: 25px 0;
   }
   th, td {
       border: 1px solid #ddd;
-      padding: 10px;
+      padding: 12px 15px; /* Increase padding */
       text-align: left;
-      vertical-align: top; /* 内容が多くなっても揃うように */
+      vertical-align: top;
   }
   th {
       background-color: #e8dff5; /* Lavender */
@@ -163,73 +195,103 @@
       background-color: #fff;
   }
   td ul { /* テーブル内のリスト */
-      margin-top: 5px;
-      margin-bottom: 5px;
-      padding-left: 15px; /* 少しインデント */
+      margin-top: 8px;
+      margin-bottom: 8px;
+      padding-left: 20px; /* Increase indent */
   }
   td ul li::before {
       content: "-"; /* リストマーカー変更 */
       color: #333;
       font-weight: normal;
+      font-size: 1em; /* Adjust size */
+      top: 4px; /* Adjust vertical position */
   }
 
   /* 親向け応援メッセージ */
   .support-message {
     background-color: #e3f2fd; /* Light Blue */
-    border-left: 5px solid #2196f3; /* Blue */
-    padding: 20px;
-    margin: 40px 0 20px 0;
-    border-radius: 5px;
+    border-left: 6px solid #2196f3; /* Blue */
+    padding: 25px;
+    margin: 50px 0 20px 0;
+    border-radius: 8px;
   }
   .support-message h3 {
       color: #1e88e5; /* Darker Blue */
       margin-top: 0;
       border-left: none;
       padding-left: 0;
+      font-size: 1.4em; /* Larger heading */
+      margin-bottom: 15px;
   }
   .support-message h3::before {
       content: "💖 ";
   }
+  .support-message ul li::before { /* Adjust list style inside support message */
+      content: "🌟";
+      color: #ffc107; /* Amber */
+  }
+
 
   /* モバイル対応 */
   @media (max-width: 600px) {
     h1 {
-      font-size: 1.8em;
+      font-size: 1.9em;
+    }
+    .subtitle {
+        font-size: 0.95em;
     }
     h2 {
-      font-size: 1.3em;
+      font-size: 1.5em;
+      margin-top: 40px;
+      padding-bottom: 10px;
+    }
+     h2::before {
+        font-size: 1.2em;
     }
     h3 {
-      font-size: 1.1em;
+      font-size: 1.2em;
+      margin-top: 25px;
+      padding-left: 10px;
     }
-    p, ul, li, td, th {
-      font-size: 0.95em; /* モバイル用に少し小さく */
+    p, ul, li {
+      font-size: 1em; /* Adjust base font for mobile */
+      margin-bottom: 15px;
+    }
+     ul li {
+        padding-left: 25px;
     }
     .container {
       margin: 10px;
-      padding: 15px;
+      padding: 15px 20px; /* Adjust padding */
     }
     table {
-        font-size: 0.85em; /* テーブルは小さくしないと見切れる可能性 */
+        font-size: 0.9em; /* Slightly larger table font for mobile */
     }
     th, td {
-        padding: 8px;
+        padding: 10px;
     }
+     td ul {
+         padding-left: 15px;
+     }
     details summary {
-        padding: 12px;
+        padding: 15px;
     }
     details div {
-        padding: 0 15px 15px 15px;
+        padding: 15px 20px;
+    }
+    .expert-comment, .important-point, .support-message {
+        padding: 15px;
+        margin: 20px 0;
     }
   }
 
   .disclaimer {
-      font-size: 0.8em;
+      font-size: 0.85em; /* Slightly larger disclaimer */
       color: #777;
       text-align: center;
-      margin-top: 30px;
+      margin-top: 40px;
       border-top: 1px solid #eee;
-      padding-top: 15px;
+      padding-top: 20px;
   }
 
 </style>
@@ -237,422 +299,576 @@
 <body>
 
 <div class="container">
-  <h1>専門家が教える！<br>赤ちゃんぐっすり睡眠ガイド💤</h1>
-  <p class="subtitle">眠る、泣く、食べる。すべてが赤ちゃんの大切な「お仕事」です。</p>
-  <p>赤ちゃんの寝かしつけは多くのパパママの悩み。ここでは、乳幼児睡眠の専門家の視点を取り入れ、赤ちゃんがよく寝てくれるための基本的な知識と具体的な方法をまとめました。焦らず、赤ちゃんとご自身のペースで試してみてくださいね。</p>
+  <h1>【完全版】専門家が教える！<br>赤ちゃんぐっすり睡眠ガイド💤</h1>
+  <p class="subtitle">眠る、泣く、食べる。すべてが赤ちゃんの大切な「お仕事」であり、健やかな成長の証です。</p>
+  <p>「どうして寝てくれないの？」「私のやり方が悪いのかな…」赤ちゃんの睡眠に関する悩みは尽きませんね。このガイドでは、乳幼児睡眠の科学的な知識と専門家の視点に基づき、<strong>赤ちゃんが安心して眠り、親御さんも少し楽になるための具体的な方法</strong>を、基本から応用まで詳しく解説します。一つ一つ、赤ちゃんの反応を見ながら、ご自身のペースで取り入れてみてください。</p>
 
   <div class="expert-comment">
-      赤ちゃんの睡眠は、心と体の成長、そして<strong>記憶の整理と定着</strong>にとっても不可欠です。しかし、睡眠パターンは大人とは大きく異なり、月齢によっても変化します。個人差も大きいので、<strong>他の子と比べすぎず、目の前の赤ちゃんのサインを読み取ることが大切</strong>です。「正しい育て方」は一つではありません。完璧なママ・パパを目指さなくても大丈夫。このガイドは一般的な知識ですが、心配なことがあれば小児科医や専門家に相談しましょう。
+      赤ちゃんの睡眠は、単なる休息ではありません。脳の発達、記憶の整理・定着、感情の調整、身体の成長など、<strong>生きる上で不可欠な様々なプロセスが行われる重要な時間</strong>です。睡眠パターンは月齢と共にダイナミックに変化し、個人差も非常に大きいのが特徴です。<strong class="highlight">他の赤ちゃんと比べるのではなく、目の前の我が子の個性とサインを丁寧に観察し、理解しようと努めること</strong>が何より大切です。「完璧な育児」や唯一の「正しい育て方」は存在しません。このガイドが、赤ちゃんとご家族にとってより良い睡眠へのヒントとなれば幸いです。もし深刻な悩みや医学的な心配事（例：激しいいびき、無呼吸、体重増加不良など）がある場合は、必ず小児科医や睡眠専門医、地域の保健師などに相談してください。
   </div>
 
   <section>
     <h2 id="purple-crying">赤ちゃんの気持ちを理解する：PURPLE Cryingとは？</h2>
-    <p>特に生後数ヶ月の赤ちゃんが激しく泣き続けることがあります。これは「PURPLE Crying」と呼ばれる、赤ちゃんの<strong>正常な発達段階の一部</strong>と考えられています。親のせいではありません。</p>
-    <ul>
-      <li><strong>P</strong>eak of crying: 泣きのピークは<strong>生後2ヶ月頃</strong>が多い。</li>
-      <li><strong>U</strong>nexpected: 泣き始めや泣き止みが<strong>予測できない</strong>。</li>
-      <li><strong>R</strong>esists soothing: 何をしても<strong>なだめられない</strong>ことがある。</li>
-      <li><strong>P</strong>ain-like face: まるで<strong>痛みがあるかのような顔</strong>で泣く。</li>
-      <li><strong>L</strong>ong lasting: <strong>1日に合計5時間以上</strong>泣くこともある。</li>
-      <li><strong>E</strong>vening: 特に<strong>午後から夕方にかけて</strong>泣きやすい。</li>
-    </ul>
+    <p>特に生後2週間頃から始まり、生後2ヶ月頃にピークを迎える激しい泣き。「何をしても泣き止まない…」と途方に暮れることもあるでしょう。これは「PURPLE Crying」と呼ばれる、多くの赤ちゃんに見られる<strong class="highlight">正常な発達の一過程</strong>です。決して親の育て方が悪いわけではありません。</p>
+    <details>
+      <summary>PURPLE Cryingの特徴（各文字の意味）</summary>
+      <div>
+        <ul>
+          <li><strong><span style="color:#6a1b9a;">P</span>eak of crying (泣きのピーク):</strong> 泣きは生後2週間頃から徐々に増え、<strong>生後2ヶ月頃に最も激しく</strong>なります。その後、生後3〜5ヶ月頃にかけて、自然と落ち着いていくことがほとんどです。</li>
+          <li><strong><span style="color:#6a1b9a;">U</span>nexpected (予測不可能):</strong> 明らかな理由（空腹、おむつ、眠気など）がないのに、突然激しく泣き始めたり、ピタッと泣き止んだりします。タイミングが読めず、親を戸惑わせます。</li>
+          <li><strong><span style="color:#6a1b9a;">R</span>esists soothing (なだめられない):</strong> 抱っこ、おっぱい、おしゃぶり、ゆらゆら…普段なら効果のある方法を試しても、全く泣き止まないことがあります。「何をしてもダメ」と感じ、親は無力感を抱きがちです。</li>
+          <li><strong><span style="color:#6a1b9a;">P</span>ain-like face (痛そうな顔):</strong> まるでどこか痛いかのように、顔を真っ赤にして苦しそうに泣くことがあります。しかし、実際には体に異常がない場合がほとんどです。（もちろん、本当に体調が悪い可能性もゼロではないので、普段と違う様子なら医療機関へ相談を）</li>
+          <li><strong><span style="color:#6a1b9a;">L</span>ong lasting (長く続く):</strong> 泣きが<strong>1日に合計で5時間以上</strong>に及ぶこともあります。数分〜数十分の激しい泣きが、断続的に繰り返されることも少なくありません。</li>
+          <li><strong><span style="color:#6a1b9a;">E</span>vening (夕方・夜間に多い):</strong> 特に<strong class="highlight">午後から夕方、夜にかけて</strong>泣きが激しくなる傾向があります。「黄昏泣き（たそがれなき）」「コリック」とも呼ばれる現象の一部と考えられます。</li>
+        </ul>
+      </div>
+    </details>
     <div class="expert-comment">
-        PURPLE Cryingの時期は、親にとって非常につらい時期です。<strong>「これは一時的なもの」「自分のせいではない」</strong>と理解することが第一歩です。赤ちゃんが安全な場所（ベビーベッドなど）にいれば、数分間その場を離れて深呼吸し、クールダウンすることも大切です。パートナーや家族、地域のサポート（保健師さんなど）を頼りましょう。決して赤ちゃんを激しく揺さぶらないでください（揺さぶられっ子症候群のリスク）。<strong>泣く日と泣かない日、時間帯などを簡単に記録しておくと、パターンが見えたり、ご自身の生活との関連に気づいたりするヒントになることも</strong>あります。
+        PURPLE Cryingの時期は、親にとって精神的にも肉体的にも非常につらいものです。まず<strong class="highlight">「これは赤ちゃんの正常な発達の一部であり、自分のせいではない」「必ず終わりが来る」</strong>と理解することが、心を保つ上で非常に重要です。赤ちゃんが安全な場所（ベビーベッドなど）にいることを確認した上で、<strong class="highlight">数分間だけその場を離れて深呼吸したり、別の部屋でクールダウンしたりすることは、決して悪いことではありません</strong>。むしろ、親が冷静さを保つために必要な場合があります。パートナーや家族、友人、地域のサポート（保健師、子育て支援センターなど）に頼ることも大切です。一人で抱え込まないでください。<br>
+        そして、<strong class="highlight">絶対にやってはいけないのは、イライラして赤ちゃんを激しく揺さぶること</strong>です。これは「揺さぶられっ子症候群（Shaken Baby Syndrome, SBS）」を引き起こし、深刻な脳損傷や死に至る危険があります。<br>
+        泣いている時間帯や状況、試したあやし方などを簡単にメモしておくと、「こういう時に泣きやすいかも」「この方法は少し効果があったかも」といったパターンが見えてきたり、自分の感情の変化に気づいたりするきっかけになるかもしれません。
     </div>
   </section>
 
   <section>
-    <h2 id="sleep-routine">寝るための準備：就寝ルーティンを作ろう</h2>
-    <p>毎日同じ流れで寝る前の準備をすることで、赤ちゃんは「これから寝る時間だ」と認識しやすくなります。<strong>一貫性が重要</strong>です。</p>
+    <h2 id="sleep-routine">寝るための準備：魔法の「就寝ルーティン」を作ろう</h2>
+    <p>毎日寝る前に同じ流れで過ごす「就寝ルーティン」は、赤ちゃんに「これから寝る時間だよ」という合図を送る、いわば<strong class="highlight">眠りのスイッチを入れるための儀式</strong>です。これにより、赤ちゃんは安心して眠りにつきやすくなります。</p>
     <details>
-        <summary>就寝ルーティンのポイントと例</summary>
+        <summary>効果的な就寝ルーティンの作り方</summary>
         <div>
+            <h3>なぜルーティンが効果的なの？</h3>
             <ul>
-              <li><strong>決まった時間に始める：</strong>毎日同じ時間にスタートしましょう。</li>
-              <li><strong>内容はシンプルに：</strong>長くても30分程度。赤ちゃんが疲れてしまう前に終わらせます。</li>
-              <li><strong>静かな活動を選ぶ：</strong>興奮させる遊びは避け、リラックスできる内容にします。</li>
-              <li><strong>順番はいつも同じに：</strong> predictability（予測可能性）が安心感につながります。</li>
-              <li><strong>おしまいの予告：</strong>遊びなどからルーティンに切り替える際、「あと〇分でおしまいだよ」「この絵本を読んだらねんねだよ」と事前に伝えることも、スムーズな移行に役立ちます（特に言葉が分かり始める頃）。</li>
+                <li><strong>予測可能性と安心感：</strong>毎日同じ流れを繰り返すことで、赤ちゃんは次に何が起こるか予測できるようになり、それが安心感につながります。「これから何されるんだろう？」という不安が減り、リラックスしやすくなります。</li>
+                <li><strong>条件付け（パブロフの犬効果）：</strong>ルーティンの各ステップが「寝る時間」という合図（条件刺激）となり、繰り返すうちに体が自然と眠る準備を始めるようになります（条件反応）。</li>
+                <li><strong>親子の時間：</strong>就寝前の穏やかな時間は、親子の絆を深める大切なコミュニケーションの時間にもなります。</li>
             </ul>
-            <p><strong>ルーティンの例：</strong></p>
+            <h3>ルーティン作成のポイント</h3>
+            <ul>
+              <li><strong>開始時間を決める：</strong>毎日<strong class="highlight">ほぼ同じ時刻</strong>にルーティンを開始しましょう。これにより、体内時計が整いやすくなります。</li>
+              <li><strong>内容はシンプル＆静かに：</strong>活動時間は全体で<strong class="highlight">20〜30分程度</strong>を目安に。長すぎると赤ちゃんが疲れたり飽きたりしてしまいます。内容は、お風呂、着替え、授乳、絵本、子守唄など、<strong class="highlight">興奮させずリラックスできる静かな活動</strong>を選びます。</li>
+              <li><strong>順番はいつも同じに：</strong>「お風呂→保湿→パジャマ→授乳→絵本→おやすみ」のように、<strong class="highlight">必ず同じ順番</strong>で行うことが重要です。</li>
+              <li><strong>おやすみ前のボディチェック：</strong>ルーティンの中に、おむつが濡れていないか、汗をかいていないか、肌に異常（湿疹、虫刺され、あせも等）はないか、鼻詰まりはないかなどをチェックする時間を設けましょう。不快感は寝つきを悪くする大きな原因です。</li>
+              <li><strong>肌触りの良い寝間着：</strong>清潔で、季節に合った、<strong class="highlight">肌触りの良い素材</strong>のパジャマやスリーパーを選びましょう。</li>
+              <li><strong>予告をする：</strong>（特に言葉が分かり始める頃から）「この絵本が終わったら、電気を消してねんねだよ」のように、<strong class="highlight">次に行うことを予告する</strong>と、赤ちゃんも心の準備がしやすくなります。遊びから切り替える際も有効です。</li>
+              <li><strong>最後のステップは寝室で：</strong>ルーティンの最後の数ステップ（例：絵本、子守唄、おやすみの挨拶）は、実際に寝る寝室で行うのが理想的です。「寝室＝寝る場所」という認識を強めます。</li>
+            </ul>
+            <p><strong>ルーティンの具体例（アレンジOK！）：</strong></p>
             <ol>
-              <li>お風呂（沐浴）</li>
-              <li><strong>おやすみ前のボディチェック：</strong>おむつは濡れていないか、虫刺されや湿疹、あせも、怪我などはないか、体温は高すぎないか、鼻は詰まっていないかなどを確認。不快なことがあると寝付きが悪くなります。</li>
-              <li>スキンケア（保湿）＆パジャマに着替える（肌触りの良いものを選びましょう）</li>
-              <li>授乳またはミルク（※寝落ち癖をつけたくない場合は、ルーティンの最後にしない）</li>
-              <li>絵本の読み聞かせ（静かな声で）</li>
-              <li>子守唄や静かな声かけ</li>
-              <li>おやすみの挨拶をして、消灯</li>
+              <li>（15-20分前）遊びのお片付け＆予告「もうすぐお風呂の時間だよ」</li>
+              <li>お風呂（沐浴）でリラックス（10-15分）</li>
+              <li>お風呂上がり：ボディチェック＆優しいスキンケア（保湿）、おむつ替え</li>
+              <li>寝室へ移動し、パジャマ（スリーパー）に着替える</li>
+              <li>授乳またはミルク（※寝落ち癖を避けたい場合は、このタイミングか、もう少し前）</li>
+              <li>静かな絵本の読み聞かせ（1-2冊）</li>
+              <li>部屋を暗くする</li>
+              <li>子守唄を歌う or 静かな声かけ「大好きだよ、おやすみ」</li>
+              <li>ベビーベッド（布団）に寝かせる</li>
+              <li>親は静かに退室 or そばで見守る</li>
             </ol>
-            <div class="expert-comment">
-                ルーティンに「これが正解」はありません。ご家庭のライフスタイルや赤ちゃんの反応に合わせてカスタマイズしましょう。大切なのは、<strong>毎日続けること</strong>で赤ちゃんに睡眠への見通しを持たせることです。生後2〜3ヶ月頃から意識して始めると良いでしょう。
-            </div>
         </div>
     </details>
+     <div class="expert-comment">
+        就寝ルーティンに「絶対の正解」はありません。ご家庭の生活スタイルや赤ちゃんの個性に合わせて、無理なく続けられる内容にすることが大切です。ポイントは<strong class="highlight">「一貫性」</strong>。毎日続けることで、その効果が最大限に発揮されます。生後2〜3ヶ月頃から意識的に始めてみましょう。もし旅行などで一時的にルーティンが崩れても、自宅に戻ったらまた再開すれば大丈夫です。
+    </div>
   </section>
 
   <section>
-    <h2 id="body-mode">体を「寝るモード」にする方法</h2>
-    <p>体の仕組みを利用して、自然な眠気を誘いましょう。</p>
+    <h2 id="body-mode">体のメカニズムを利用！「寝るモード」にする方法</h2>
+    <p>私たちの体には、自然な眠気を誘う仕組みが備わっています。それを上手に利用して、赤ちゃんがスムーズに眠りにつけるようにサポートしましょう。</p>
     <details>
-        <summary>1. 光で眠りを誘う</summary>
+        <summary>1. 「光」を制する者は睡眠を制す</summary>
         <div>
-            <p><strong>寝る2時間くらい前から部屋の照明を暗くする</strong>ことが推奨されます。明るい光（特にブルーライト）は睡眠ホルモンである<strong>メラトニン</strong>の分泌を抑制してしまいます。</p>
+            <h3>体内時計とメラトニンの深い関係</h3>
+            <p>私たちの脳の中にある体内時計は、光によってコントロールされています。特に重要なのが<strong class="highlight">「メラトニン」</strong>という睡眠ホルモンです。</p>
             <ul>
-                <li>間接照明や暖色系のライトを使う。</li>
-                <li>テレビやスマホ、タブレットの画面も強い光なので、寝る前1時間は避ける。</li>
+                <li><strong>夜の暗さ：</strong>暗くなるとメラトニンの分泌が始まり、これが眠気を誘います。分泌のピークは深夜になります。</li>
+                <li><strong>朝の光：</strong>朝日を浴びるとメラトニンの分泌が止まり、代わりに覚醒を促す「セロトニン」という神経伝達物質が分泌されます。このセロトニンは、夜になると再びメラトニンの材料になります。</li>
+                <li><strong>ブルーライトの罠：</strong>太陽光だけでなく、スマートフォン、タブレット、PC、LED照明などに多く含まれる<strong class="highlight">ブルーライト</strong>は、メラトニンの分泌を<strong class="highlight">強力に抑制</strong>してしまいます。夜にこれらの光を浴びると、脳が「まだ昼だ」と勘違いし、寝つきが悪くなったり、睡眠の質が低下したりします。</li>
             </ul>
-            <p><strong>朝と日中の光も重要：</strong></p>
-             <ul>
-                 <li><strong>朝：</strong>起きたらカーテンを開けて太陽の光を浴び、体内時計をリセットしましょう。</li>
-                 <li><strong>日中：</strong>適度な<strong>外遊びや散歩</strong>などで日光を浴びることは、夜のメラトニン分泌を促すと言われています（松果体への刺激）。</li>
+            <h3>具体的な光のコントロール法</h3>
+            <ul>
+                <li><strong>夜：寝る1〜2時間前から</strong>部屋の照明を<strong class="highlight">暖色系の間接照明</strong>などに切り替え、照度を落とします。テレビやスマホなどの画面は<strong class="highlight">寝る1時間前にはオフ</strong>にするのが理想です。寝室はできるだけ<strong class="highlight">真っ暗</strong>にしましょう。（安全確保のための最低限の足元灯などはOK）</li>
+                <li><strong>朝：決まった時間に</strong>カーテンを開け、太陽の光を部屋に取り込みます。「おはよう！」と声をかけ、一日の始まりを体に知らせましょう。曇りや雨の日でも、窓際で過ごすだけでも効果があります。</li>
+                <li><strong>日中：</strong>適度に明るい環境で過ごし、可能であれば<strong class="highlight">午前中に外に出て日光を浴びる</strong>時間を作りましょう。これは夜のメラトニン分泌を促進し、体内時計を強化します。</li>
             </ul>
             <div class="expert-comment">
-                メラトニンは「暗くなると分泌され、明るくなると抑制される」という性質があります。夜にしっかり分泌されることで、質の高い睡眠が得られます。朝と夜のメリハリをつけることが大切です。
+                光のコントロールは、赤ちゃんの睡眠リズムを整える上で最も基本的かつ効果的な方法の一つです。特に夜間のブルーライト対策は重要です。大人も同様ですので、家族全員で取り組むと良いでしょう。
             </div>
         </div>
     </details>
     <details>
-        <summary>2. 生活リズムで眠りを誘う</summary>
+        <summary>2. 「生活リズム」で体内時計を整える</summary>
         <div>
-            <p><strong>起床時間と就寝時刻をできるだけ毎日同じにする</strong>ことで、赤ちゃんの体内時計が整いやすくなります。研究によっては、<strong>早寝の赤ちゃんほど夜間の総睡眠時間が長くなる</strong>傾向も示唆されています。</p>
+             <h3>なぜ規則正しい生活が大切なのか</h3>
+             <p>毎日同じ時間に寝起きし、食事や活動をすることで、赤ちゃんの体内時計は約24時間周期で正確に働くようになります。これにより、眠る時間になると自然に眠くなり、起きる時間になるとすっきり目覚めやすくなります。</p>
+             <ul>
+                 <li><strong>睡眠の質向上：</strong>規則正しいリズムは、深い睡眠の割合を増やし、睡眠全体の質を高めます。</li>
+                 <li><strong>心身の安定：</strong>体内時計は睡眠だけでなく、体温、ホルモン分泌、消化活動など、体の様々な機能のリズムを調整しています。リズムが整うことで、赤ちゃんの機嫌が安定し、日中の活動意欲も高まる傾向があります。</li>
+                 <li><strong>早寝のメリット：</strong>研究によれば、一般的に<strong class="highlight">早寝（例：19時〜20時台）の赤ちゃんの方が、夜間の連続睡眠時間が長く、総睡眠時間も多くなる</strong>傾向が示唆されています。ただし、最適な就寝時間は家庭のライフスタイルや赤ちゃんの個性によって異なります。</li>
+             </ul>
+             <h3>生活リズムを整えるコツ</h3>
             <ul>
-                <li>休日も平日と同じリズムを心がけるのが理想。</li>
-                <li>もし赤ちゃんが予定より早く起きてしまっても、すぐに部屋を明るくしたりせず、<strong>いつもの起床時間になるまで薄暗い寝室で静かに過ごし、「おはよう」の挨拶もいつもの時間</strong>にしましょう。</li>
+                <li><strong>起床・就寝時刻の固定：</strong><strong class="highlight">平日も休日も、できるだけ同じ時間に起こし、同じ時間に寝かせる</strong>ことを目指しましょう。（±30分程度のずれは許容範囲）</li>
+                <li><strong>朝の光を浴びる：</strong>起床時刻を固定する上で、朝の光は非常に重要です。</li>
+                <li><strong>食事の時間：</strong>離乳食が始まると、食事の時間もリズム作りの重要な要素になります。毎日なるべく同じ時間に食べさせるようにしましょう。</li>
+                <li><strong>早朝覚醒時の対応：</strong>もし目標より早く起きてしまっても、<strong class="highlight">すぐに部屋を明るくしたり、完全に起こしたりせず</strong>、いつもの起床時間まで薄暗い静かな環境で過ごさせましょう。「おはよう」の声かけも、いつもの時間まで待ちます。これにより、「まだ寝る時間だよ」というメッセージを伝えます。</li>
             </ul>
             <div class="expert-comment">
-                体内時計は、睡眠だけでなく、体温やホルモン分泌など、体の様々なリズムを調整しています。規則正しい生活は、赤ちゃんの心と体の健やかな発達の土台となります。
+                完璧にスケジュール通りにいかなくても大丈夫です。特に低月齢のうちは、日によって変動が大きいもの。あまり厳密になりすぎず、「だいたいこのくらいの時間」という意識で、<strong class="highlight">長期的な視点でリズムを整えていく</strong>ことが大切です。
             </div>
         </div>
     </details>
      <details>
-        <summary>3. 体温で眠りを誘う</summary>
+        <summary>3. 「体温」の変化で眠りを誘う</summary>
         <div>
-            <p>人は、体の深部体温が下がるときに眠気を感じます。お風呂に入ると一時的に体温が上がりますが、その後、体温が下がるタイミングで眠気が強まります。</p>
+            <h3>眠りと体温の関係</h3>
+            <p>私たちは、体の内部の温度（深部体温）が下がり始めるときに眠気を感じます。日中は活動のために体温が高く保たれ、夜になると体温が下がるという自然なリズムがあります。</p>
             <ul>
-                <li>お風呂から上がって<strong>すぐに寝かせるのではなく、60分ほど時間を置いて</strong>から寝かしつけを始めると、体温が下がるタイミングと合いやすいと言われています。</li>
-                <li>ただし、赤ちゃんによっては、お風呂でリラックスしてすぐ眠くなる子もいます。赤ちゃんの様子に合わせて調整しましょう。</li>
+                <li><strong>入浴の効果：</strong>お風呂に入ると一時的に体温が上がります。その後、体が元の体温に戻ろうとして熱を放散し、深部体温が下がっていきます。この<strong class="highlight">体温が下降するタイミング</strong>が、入眠に適した状態です。</li>
+                <li><strong>タイミングが重要：</strong>一般的に、入浴後すぐに寝かせようとするよりも、<strong class="highlight">入浴から60分〜90分後くらい</strong>に寝かしつけを始めると、ちょうど体温が下がるタイミングと合いやすいと言われています。</li>
+            </ul>
+            <h3>実践のポイント</h3>
+            <ul>
+                <li><strong>寝る1〜1.5時間前に入浴：</strong>就寝時間から逆算して、お風呂の時間を決めると良いでしょう。</li>
+                <li><strong>赤ちゃんの反応を見る：</strong>ただし、これはあくまで一般的な目安。赤ちゃんによっては、お風呂でリラックスしてすぐに眠くなる子もいます。色々なタイミングを試してみて、<strong class="highlight">我が子にとってベストな時間</strong>を見つけましょう。</li>
+                <li><strong>湯冷めに注意：</strong>お風呂上がりは体が冷えないように、素早く体を拭いて服を着せ、室温にも注意しましょう。</li>
+                <li><strong>水分補給：</strong>入浴後は汗をかいているので、水分補給も忘れずに行いましょう。</li>
             </ul>
              <div class="expert-comment">
-                 湯冷めしないよう、室温や着せるものには注意してください。お風呂上がりの水分補給も忘れずに行いましょう。
+                 体温調節は、睡眠リズムを作る上で光や生活習慣と並んで重要な要素です。ただし、効果には個人差があります。入浴以外にも、寝る前に手足が温かくなるのは、体が熱を放散して深部体温を下げようとしているサイン。これも眠いサインの一つと捉えられます。
             </div>
         </div>
     </details>
   </section>
 
   <section>
-    <h2 id="mind-mode">心を「寝るモード」にする方法</h2>
-    <p>安心して眠りにつけるよう、心をリラックスさせましょう。</p>
+    <h2 id="mind-mode">心も「寝るモード」へ：安心感が鍵</h2>
+    <p>体が眠る準備ができても、心が不安だったり興奮していたりしては、スムーズに眠りにつけません。赤ちゃんが「ここは安全だ」「安心して眠っていいんだ」と感じられるように、心をリラックスさせてあげましょう。</p>
     <details>
-        <summary>心をリラックスさせるには？</summary>
+        <summary>心をリラックスさせる具体的な方法</summary>
         <div>
             <ul>
-              <li><strong>優しい声かけ：</strong>「ねんねの時間だよ」「大好きだよ」「安心して寝ていいんだよ」など、穏やかな声で話しかけます。日中、目を合わせてたくさんおしゃべりすることも、赤ちゃんの安心感や前頭葉の発達につながります。</li>
-              <li><strong>スキンシップ：</strong>抱っこや背中トントン、マッサージなどで、肌の触れ合いを通じて安心感を与えます。スキンシップは赤ちゃんの<strong>脳の発達にも良い影響を与える</strong>と言われています。</li>
-              <li><strong>寝室＝安心できる場所：</strong>寝室は「寝るための、静かで安心できる場所」と赤ちゃんが認識できるように、日中の遊び場とは区別し、寝る前は穏やかに過ごす場所にしましょう。叱ったり、怖い思いをさせたりする場所にはしないことが大切です。</li>
+              <li><strong>優しい声かけ：</strong>「ねんねの時間だよ、今日も一日よく頑張ったね」「ママ（パパ）はここにいるから大丈夫だよ」「〇〇ちゃんのこと、大好きだよ」など、<strong class="highlight">穏やかで愛情のこもった声</strong>で話しかけましょう。内容は理解できなくても、声のトーンや表情から親の気持ちは伝わります。</li>
+              <li><strong>たっぷりのスキンシップ：</strong>抱っこ、背中を優しくトントンする、手足をそっと撫でる、ベビーマッサージなど、<strong class="highlight">肌と肌が触れ合うスキンシップ</strong>は、赤ちゃんに絶大な安心感を与えます。スキンシップによって分泌される「オキシトシン（愛情ホルモン）」は、ストレスを軽減し、リラックス効果を高めることが知られています。これは<strong class="highlight">赤ちゃんの脳の発達にも良い影響を与える</strong>と言われています。</li>
+              <li><strong>寝室＝安心できる場所と認識させる：</strong>寝室は<strong class="highlight">「静かで、暗くて、安心して眠るための場所」</strong>と赤ちゃんが学習できるように、日中の主な遊び場とは区別しましょう。寝室で叱ったり、怖い思いをさせたりするのは避けます。寝る前の時間は、寝室で穏やかに過ごすことを習慣づけましょう。</li>
+              <li><strong>親の心の安定：</strong>赤ちゃんは<strong class="highlight">親の感情を敏感に察知</strong>します。親がイライラしていたり、焦っていたりすると、その不安が赤ちゃんにも伝わり、寝つきが悪くなることがあります。「早く寝かせなきゃ！」というプレッシャーを手放し、<strong class="highlight">「一緒にリラックスする時間」</strong>と捉えて、ゆったりとした気持ちで接することが大切です。</li>
+              <li><strong>日中の関わりが土台：</strong>夜の安心感は、日中の親との関わりによって育まれます。日中にたくさん目を合わせて笑いかけたり、話しかけたり、赤ちゃんの「見て！」「できた！」に応えたり、<strong class="highlight">赤ちゃんの欲求（遊びたい、甘えたい）に寄り添う</strong>ことが、夜の分離不安を和らげ、安心して眠るための土台となります。</li>
             </ul>
-            <div class="expert-comment">
-                赤ちゃんは親の感情に敏感です。寝かしつけがうまくいかなくても、イライラせず、<strong>ゆったりとした気持ちで接する</strong>ことが、赤ちゃんのリラックスにつながります。「早く寝かせなきゃ」というプレッシャーは逆効果になることもあります。日中の関わり（たくさん遊ぶ、話しかける、笑顔を交わす）が、夜の安心感の土台になります。<strong>赤ちゃんの「やってみたい！」気持ちを満たしてあげること</strong>も、満足感につながり夜泣きを減らす一因になるかもしれません。
-            </div>
         </div>
     </details>
+     <div class="expert-comment">
+        寝かしつけは、単に赤ちゃんを眠らせる作業ではなく、<strong class="highlight">親子の愛着関係を深める大切なコミュニケーションの時間</strong>でもあります。テクニックだけに頼るのではなく、赤ちゃんの心に寄り添い、安心感を与えてあげることを常に心がけましょう。それが結果的に、スムーズな寝かしつけにつながることが多いのです。
+    </div>
   </section>
 
   <section>
-    <h2 id="avoid-mistakes">要注意！やってしまいがちな「ねんね妨害スイッチ」</h2>
-    <p>良かれと思ってやっていることが、実は赤ちゃんの眠りを妨げているかもしれません。</p>
+    <h2 id="avoid-mistakes">要注意！良かれと思って…実は「ねんね妨害スイッチ」かも？</h2>
+    <p>「寝つきが悪いのはなぜ？」「夜中に何度も起きるのはどうして？」その原因は、もしかしたら無意識のうちに押してしまっている「ねんね妨害スイッチ」にあるかもしれません。よくある例をチェックしてみましょう。</p>
     <ul class="ng-list">
-      <li><strong>夕方眠そうでも寝かせない？ → 夕寝もOK！</strong>
-        <p>夕方に眠そうなのは、疲れが溜まっているサイン。無理に起こしておくよりも、15〜30分程度の短いお昼寝（夕寝）をさせてあげましょう。ただし、就寝時刻の2〜3時間前までには起こすようにし、夜の睡眠に響かないように調整が必要です。</p></li>
-      <li><strong>寝る前も大興奮で遊ぶ？ → 寝る前は静かに。</strong>
-        <p>寝る前に激しく遊ぶと、交感神経が優位になり、なかなか寝付けなくなります。就寝ルーティンでリラックスモードに切り替えましょう。</p></li>
-      <li><strong>眠くなさそうだからコンビニまで散歩？ → 夜は明るい場所へ行かない！</strong>
-        <p>夜間の明るい光（特にコンビニなどの蛍光灯）はメラトニンの分泌を強力に抑制し、体内時計を狂わせる原因になります。夜の外出は控えめに。</p></li>
-      <li><strong>暑い/寒いのにエアコンをつけない？ → 快適な室温を保つ！</strong>
-        <p>赤ちゃんは体温調節が苦手。特に暑すぎるとSIDSのリスクも高まります。エアコンや暖房を適切に使い、快適な室温を保ちましょう。
-        <strong>室温目安：夏は25〜27℃、春秋は20〜22℃、冬は18〜20℃</strong>。ただし、これはあくまで目安。赤ちゃんの背中や首の後ろを触って、汗ばんでいたり冷たすぎたりしないか確認し、服装で調整しましょう。</p></li>
-      <li><strong>眠たくなる動画を見せる？ → 寝る前1時間は画面オフ！</strong>
-        <p>動画などの画面から出るブルーライトは、脳を覚醒させ、メラトニンの分泌を妨げます。寝る1時間前からは避けましょう。代わりに、絵本を読んだり、静かな手遊びをしたりする時間にするのがおすすめです。</p></li>
-      <li><strong>真っ暗はかわいそうだから豆電球をつける？ → できるだけ真っ暗に。</strong>
-        <p>わずかな光でも、赤ちゃんの目に入ると睡眠の質を低下させたり、中途覚醒の原因になったりすることがあります。安全が確保できる範囲で、できるだけ真っ暗にするのが理想です。お世話で明かりが必要な場合は、足元を照らす程度の暖色系のフットライトなどを検討しましょう。</p></li>
-      <li><strong>パパの帰宅を待ってお風呂？ → 生活リズム優先でOK。</strong>
-        <p>パパの帰宅時間が不規則な場合、毎日時間を合わせるのは難しいでしょう。無理に待つよりも、赤ちゃんの生活リズムを優先しましょう。お風呂に入れなくても、体を拭くだけでも十分です。パパとの触れ合いは、他の時間で大切にしましょう。</p></li>
+      <li><strong>夕方眠そう？ → 限界まで起こしておく？ <span style="color:#e74c3c;">NG!</span> → 夕寝で小休憩を！</strong>
+        <p>夕方にぐずったり眠そうにしたりするのは、1日の疲れが溜まっているサインです。ここで無理に起こしておくと、疲れすぎて（オーバード状態）、かえって寝つきが悪くなったり、夜泣きが増えたりする原因に。就寝時刻に影響しない範囲で（目安として就寝3時間前までに起きる）、<strong class="highlight">15〜30分程度の短い夕寝</strong>をさせてあげましょう。お昼寝の延長と考え、少しリフレッシュさせてあげるのがポイントです。</p></li>
+      <li><strong>寝る前も元気いっぱい！ → パパとダイナミックな遊び？ <span style="color:#e74c3c;">NG!</span> → 静かな時間へ移行を。</strong>
+        <p>寝る前に追いかけっこや高い高いなど、体を激しく動かす遊びや大笑いするような遊びは、交感神経を活発にし、脳を興奮状態にしてしまいます。アドレナリンが出てしまい、なかなか寝付けなくなる原因に。寝る1時間前くらいからは、絵本を読んだり、静かな音楽を聴いたり、穏やかなスキンシップをとったりするなど、<strong class="highlight">副交感神経が優位になるようなリラックスモード</strong>へ徐々に切り替えていきましょう。</p></li>
+      <li><strong>まだ眠くなさそう… → ちょっとコンビニまで気分転換？ <span style="color:#e74c3c;">NG!</span> → 夜の強い光は避けて！</strong>
+        <p>コンビニやスーパーなどの<strong class="highlight">明るい蛍光灯の光は、メラトニンの分泌を強力に抑制</strong>し、体内時計を狂わせる大きな原因となります。「眠くなさそう」に見えても、それは一時的な興奮状態かもしれません。夜間の外出、特に明るい場所への外出は極力避け、家の中で静かに過ごしましょう。</p></li>
+      <li><strong>電気代が気になる… → 暑い/寒いけどエアコンは我慢？ <span style="color:#e74c3c;">NG!</span> → 快適な室温は必須！</strong>
+        <p>赤ちゃんは大人よりも体温調節機能が未熟で、暑さ・寒さの影響を受けやすいです。特に<strong class="highlight">暑すぎはSIDS（乳幼児突然死症候群）のリスクを高める</strong>可能性も指摘されています。寒すぎても、体が冷えて眠りが浅くなったり、風邪の原因になったりします。エアコンや暖房を適切に使い、<strong class="highlight">赤ちゃんにとって快適な室温（目安：夏25〜27℃、春秋20〜22℃、冬18〜20℃）</strong>を保つことが非常に重要です。赤ちゃんの背中や首元を触り、汗ばんでいないか、冷たすぎないかを確認し、服装と併せて調整しましょう。</p></li>
+      <li><strong>これなら寝るかも？ → 寝かしつけ用の動画やアプリ？ <span style="color:#e74c3c;">NG!</span> → 寝る前の画面はオフ！</strong>
+        <p>スマートフォンやタブレットの画面から出る<strong class="highlight">ブルーライトは、脳を覚醒させ、メラトニンの分泌を妨げます</strong>。また、動画の光や音の刺激は、リラックスとは逆効果になることが多いです。「眠くなる音楽」なども、イヤホンではなくスピーカーで小さな音で流す、タイマーで切れるようにするなど、使い方に注意が必要です。基本的には、<strong class="highlight">寝る1時間前からはデジタルデバイスの画面を見るのは避けましょう</strong>。</p></li>
+      <li><strong>真っ暗はかわいそう？ → 豆電球や常夜灯をつけたまま？ <span style="color:#e74c3c;">NG!</span> → できる限り暗く！</strong>
+        <p>メラトニンはわずかな光でも分泌が抑制されてしまいます。豆電球や常夜灯の光が目に入ると、睡眠の質を低下させ、<strong class="highlight">中途覚醒の原因</strong>になったり、体内時計がずれやすくなったりします。安全が確保できる範囲で、<strong class="highlight">寝室はできるだけ真っ暗にする</strong>のが理想です。遮光カーテンを利用し、ドアの隙間やカーテンの下からの光漏れも防ぐ工夫をしましょう（タオルを詰めるなど）。お世話で明かりが必要な場合は、直接赤ちゃんの顔に光が当たらないよう、<strong class="highlight">足元を照らす程度の暖色系のフットライト</strong>などを、必要な時だけ使うようにしましょう。</p></li>
+      <li><strong>家族の時間も大切！ → パパの帰りを待ってからお風呂？ <span style="color:#e74c3c;">場合によるが、リズム優先！</span></strong>
+        <p>パパとの触れ合いはもちろん大切ですが、帰宅時間が毎日遅かったり不規則だったりする場合、それに合わせてお風呂や就寝時間をずらすと、赤ちゃんの<strong class="highlight">生活リズムが崩れてしまいます</strong>。生活リズムの乱れは、寝つきの悪さや夜泣きにつながりやすいです。可能な範囲で協力してもらいつつも、基本的には<strong class="highlight">赤ちゃんの睡眠スケジュールを優先</strong>しましょう。お風呂に一緒に入れなくても、寝る前の絵本の読み聞かせをパパにお願いするなど、他の形で触れ合いの時間を確保する工夫もできます。毎日お風呂に入れなくても、体を拭くだけの日があっても大丈夫です。</p></li>
     </ul>
     <div class="expert-comment">
-        これらの「妨害スイッチ」は、大人の感覚では問題ないように思えても、赤ちゃんの繊細な睡眠システムには影響を与えやすいものです。<strong>睡眠環境と生活リズムの一貫性</strong>を意識することが、スムーズな寝かしつけへの近道です。
+        これらの「妨害スイッチ」は、知らず知らずのうちに習慣化していることもあります。一度、ご自身の寝かしつけ習慣や睡眠環境を見直してみると、改善のヒントが見つかるかもしれません。<strong class="highlight">一貫した睡眠環境と生活リズム</strong>が、赤ちゃんの健やかな睡眠の土台となります。
     </div>
   </section>
 
    <section>
-    <h2 id="ng-care">夜中に注意！赤ちゃんを起こすNGお世話</h2>
-    <p>赤ちゃんは大人と比べて浅い睡眠（レム睡眠）の割合が多く、睡眠サイクルも短いため、<strong>夜中に何度か目を覚ますのは自然なこと</strong>です。モゾモゾしたり、少し泣いたりしても、すぐに介入せず、少し様子を見ることも大切です。専門家によっては<strong>「赤ちゃんにとって5時間連続で寝られれば『ぐっすり』」</strong>と考えることもあります。</p>
+    <h2 id="ng-care">夜中に注意！良かれと思って…実は起こしてる？NGお世話</h2>
+    <p>赤ちゃんは大人と違い、浅い睡眠（レム睡眠）の割合が多く、睡眠サイクルも短い（約50〜60分）ため、夜中に<strong class="highlight">モゾモゾしたり、フニャフニャと声を出したり、短い時間泣いたりするのは、ごく自然なこと</strong>です。必ずしも親の助けを必要としているわけではありません。むしろ、良かれと思ったお世話が、完全に起こしてしまう「覚醒スイッチ」になっている可能性もあります。</p>
+    <p>専門家の中には、赤ちゃんにとって<strong class="highlight">「5時間続けて眠れたら、それはもう『ぐっすり眠った』と言える」</strong>と考える人もいます。大人のように朝まで一度も起きずに眠ることだけが「良い睡眠」ではないことを理解しましょう。</p>
     <ul class="ng-list">
-      <li><strong>泣いたらすぐに声をかける・駆け寄る？ → 少し待ってみる。</strong>
-        <p>寝言泣きや一時的な覚醒かもしれません。すぐに介入すると完全に起こしてしまう可能性が。<strong>60〜90秒ほど様子を見て</strong>、本当に助けが必要か見極めましょう。自分で再び眠りに戻る力を育むチャンスでもあります。毎回無理にあやす必要はありません。</p></li>
-      <li><strong>泣くたびにオムツを替える？ → 必要最低限に。</strong>
-        <p>夜中のおむつ替えは大きな刺激。おしっこだけなら、漏れや肌トラブルがなければ朝まで替えなくてもOKな場合が多いです。明らかにうんちをしている場合や漏れそうな場合のみ、<strong>静かに、手早く</strong>替えましょう。寝る前のボディチェックで、おむつかぶれなどがないか確認しておくことも大切です。夜用に吸収力の高いおむつやライナーを使うのも手です。</p></li>
-      <li><strong>泣くたびに授乳する？ → 睡眠の関連付けに注意。</strong>
-        <p>特に生後数ヶ月以降、空腹でないのに泣くたびに授乳していると、「授乳＝寝るための手段」という強い癖ができ、夜中に何度も求めてしまうことがあります。月齢に応じて夜間授乳を減らすことも検討しましょう。（月齢別ガイド参照）</p></li>
-      <li><strong>声をかけながら授乳する？ → 静かに、最小限の刺激で。</strong>
-        <p>夜中の授乳は、できるだけ静かに、薄暗い中で。赤ちゃんがうとうとしている時に話しかけると覚醒させてしまいます。</p></li>
-      <li><strong>部屋や顔をライトで照らす？ → 明かりは最小限に。</strong>
-        <p>お世話が必要な場合も、部屋全体の電気はつけず、手元を照らす程度の最小限の明かり（暖色系がベター）で。</p></li>
-      <li><strong>掛け布団を使う？ → 窒息リスクのためNG！</strong>
-        <p><strong>0歳児（特に寝返りが始まった赤ちゃん）に掛け布団は窒息のリスクがあるため、絶対に使用しないでください。</strong>寒さ対策は、スリーパーやスリーピングバッグを使用しましょう。生後3ヶ月頃まではおくるみも有効ですが、<strong>手足が自由に動かせないほどきつく巻かない、股関節の発達を妨げない巻き方にする、寝返りを始めたら使用を中止する</strong>などの注意が必要です。</p></li>
-      <li><strong>特定のぬいぐるみやタオルを「ねんねの友達」にする？ → 安全なものを選んで、適切な時期に。</strong>
-        <p>「ねんねのお守り（トランジショナルオブジェクト）」は安心感を与えることがありますが、<strong>1歳未満の赤ちゃんの寝床には、窒息やSIDSのリスクを高めるため、柔らかい寝具やぬいぐるみは置かない</strong>のが安全の基本です。導入するなら<strong>1歳（または専門家によっては10ヶ月頃）以降</strong>を目安に、<strong>通気性が良く、顔を覆う心配のない小さな布やぬいぐるみ</strong>を選びましょう。</p></li>
+      <li><strong>フニャっと泣いたら即反応？ → すぐに声をかける・抱き上げる？ <span style="color:#e74c3c;">NG!</span> → まずは見守る時間（ポーズ）を！</strong>
+        <p>それは「寝言泣き」かもしれません。あるいは、睡眠サイクルが切り替わるタイミングでの一時的な覚醒で、<strong class="highlight">放っておけばまた自分で眠りに戻れる</strong>可能性があります。すぐに声をかけたり、抱き上げたり、電気をつけたりすると、せっかく自分で寝直そうとしていた赤ちゃんを完全に起こしてしまいます。まずは焦らず、<strong class="highlight">60秒〜90秒ほど、静かに様子を見てみましょう</strong>（これを「ポーズ」と呼ぶ専門家もいます）。本当に助けが必要な泣きなのか（空腹、不快、体調不良など）を見極めることが大切です。毎回無理にあやす必要はなく、自分で寝直す力を育む機会を与えることも重要です。</p></li>
+      <li><strong>泣いたらとりあえずおむつ？ → 夜中に何度も替える？ <span style="color:#e74c3c;">NG!</span> → 必要最低限の交換を、静かに！</strong>
+        <p>夜中のおむつ替えは、<strong class="highlight">明かり、冷たさ、体の動きなど、赤ちゃんを起こしてしまう強い刺激</strong>になります。おしっこだけで、おむつから漏れていたり、肌がかぶれたりする心配がなければ、<strong class="highlight">朝まで替えなくても大丈夫な場合がほとんど</strong>です。最近の高性能おむつは吸収力が高く、少量のおしっこなら不快感も少ないことが多いです。明らかにうんちをしている場合や、大量のおしっこで漏れそうな場合のみ、<strong class="highlight">部屋の明かりはつけず、手元灯などの最小限の明かりで、できるだけ静かに、手早く</strong>行いましょう。寝る前にしっかりおしりケアをして、夜用に吸収力の高いおむつや、おむつライナー（吸収パッド）を使うのも効果的です。</p></li>
+      <li><strong>泣いたらおっぱいorミルク？ → 夜間の要求に毎回応える？ <span style="color:#e74c3c;">要注意！</span> → 空腹か癖かを見極めて。</strong>
+        <p>新生児期や低月齢期は、夜間の授乳は栄養のためにも必要です。しかし、ある程度月齢が進み（目安として生後6ヶ月以降）、体重増加も順調であれば、<strong class="highlight">夜間の空腹以外の理由（例：寝ぼけている、安心感を求めている、癖になっている）で泣いている</strong>可能性も高まります。泣くたびに授乳で対応していると、「おっぱい（ミルク）＝寝るための必須アイテム」という<strong class="highlight">強い睡眠の関連付け（癖）</strong>ができてしまい、夜中に何度もそれを求めて起きるようになってしまうことがあります。もちろん、成長期などで一時的に夜間の授乳が必要になることもあります。月齢、体重増加、日中の授乳・食事量などを考慮し、本当に空腹なのか、それとも他の理由なのかを見極め、<strong class="highlight">徐々に夜間授乳の間隔をあけたり、回数を減らしたり</strong>することを検討しても良いでしょう。（月齢別ガイドも参照）</p></li>
+      <li><strong>授乳しながら話しかける？ → 目を見て優しく？ <span style="color:#e74c3c;">NG!</span> → 夜中は静寂が基本！</strong>
+        <p>夜中の授乳は、あくまで栄養補給や安心感を与えるためのもの。<strong class="highlight">できるだけ赤ちゃんを覚醒させない</strong>ことが重要です。部屋は暗いまま、声もかけず、目も合わせず、<strong class="highlight">淡々と、静かに行う</strong>のがコツです。赤ちゃんが飲みながらうとうとしている時に話しかけると、完全に起こしてしまい、その後の寝かしつけが大変になることがあります。</p></li>
+      <li><strong>オムツ替えや様子見で… → スマホのライトで照らす？ <span style="color:#e74c3c;">NG!</span> → 最小限の優しい光で！</strong>
+        <p>スマートフォンのライトは、たとえ短時間でも<strong class="highlight">非常に強いブルーライト</strong>を含んでおり、メラトニンの分泌を抑制し、赤ちゃんを覚醒させてしまいます。お世話で明かりが必要な場合は、前述の通り、<strong class="highlight">暖色系のフットライトや、明るさを最小限に調節できる授乳ライト</strong>などを、必要な範囲だけ照らすように使いましょう。</p></li>
+      <li><strong>寒くないように… → ふわふわの掛け布団？ <span style="color:#e74c3c;">絶対NG!</span> → スリーパーで安全に！</strong>
+        <p><strong class="highlight">0歳児（特に自分で寝返りができるようになった赤ちゃん）に掛け布団を使用することは、窒息やSIDSのリスクを高めるため、絶対にやめてください。</strong>これは世界的な安全基準で推奨されています。同様に、<strong class="highlight">枕、ぬいぐるみ、ベッドバンパーなども、赤ちゃんの睡眠スペースには置かない</strong>でください。寒さ対策には、<strong class="highlight">体にフィットし、顔にかかる心配のないスリーパー（着る毛布）やスリーピングバッグ</strong>を使用しましょう。おくるみは新生児期には有効ですが、<strong class="highlight">股関節の動きを妨げないように緩めに巻く、熱がこもりすぎないように素材を選ぶ、寝返りを始めたら（または生後3-4ヶ月を目安に）使用を中止する</strong>などの注意が必要です。</p></li>
+      <li><strong>安心するように… → お気に入りのタオルやぬいぐるみを寝床に？ <span style="color:#e74c3c;">1歳まではNG、その後も注意！</span></strong>
+        <p>特定の物が安心感を与える「ねんねのお守り（トランジショナルオブジェクト）」になることはあります。しかし、安全上の理由から、<strong class="highlight">米国小児科学会（AAP）などは、1歳になるまで赤ちゃんのベビーベッドには、柔らかい寝具やぬいぐるみなどを一切置かない</strong>ことを強く推奨しています。窒息のリスクがあるためです。もし導入を考えるなら、<strong class="highlight">1歳を過ぎてから</strong>、顔を覆ってしまう危険がなく、<strong class="highlight">通気性の良い小さな布（ガーゼハンカチなど）や、小さなぬいぐるみ</strong>を、親が見守れる範囲で試してみるのが良いでしょう。それでも、安全には最大限の配慮が必要です。</p></li>
     </ul>
     <div class="expert-comment">
-        夜間のお世話は、<strong>「赤ちゃんを起こさないこと」</strong>を最優先に考えましょう。静かに、暗く、手早く行うのがコツです。そして、<strong>安全な睡眠環境（Safety Sleep Environment）</strong>の確保は、何よりも重要です。米国小児科学会などが推奨するガイドライン（仰向け寝、硬めのマットレス、ベビーベッドの使用、ベッド内に何も置かない等）を常に意識してください。
+        夜間のお世話の基本は<strong class="highlight">「できるだけ刺激を与えず、起こさないこと」</strong>です。静かに、暗く、手早く、必要最低限の介入に留めることを意識しましょう。そして、何よりも<strong class="highlight">「安全な睡眠環境（Safe Sleep Environment）」</strong>を常に確保することが、親の最も重要な責任です。SIDSのリスクを減らすための推奨事項（仰向け寝、硬い寝床、同室別床、ベッド内は空に、禁煙など）は、必ず守るようにしてください。
     </div>
   </section>
 
   <section>
-    <h2 id="comfortable-sleep">赤ちゃんが快適に眠るための環境づくり</h2>
-    <p>赤ちゃんが安心してぐっすり眠れる環境を整えましょう。</p>
+    <h2 id="comfortable-sleep">赤ちゃんがグッスリ眠れる！最高の睡眠環境づくり</h2>
+    <p>赤ちゃんが快適で安全に眠るためには、寝室の環境を整えることが非常に重要です。「光」「音」「温度」「湿度」「肌触り」そして「安全」の６つの要素をチェックしましょう。</p>
     <details>
-      <summary>光・音・温度・湿度・肌触りをコントロール</summary>
+      <summary>光・音・温度・湿度・肌触りの最適化</summary>
       <div>
           <ul>
-              <li><strong>光：</strong>日中は明るく、夜は真っ暗に。朝になったらカーテンを開けて太陽の光を取り入れ、体内時計をリセット。夜は遮光カーテンで光漏れを防ぎましょう。カーテンの下からの光漏れには、丸めたタオルやクッションを置くと効果的です。</li>
-              <li><strong>音：</strong>生活音が気になる場合や、静かすぎると逆に寝付けない赤ちゃんには、<strong>ホワイトノイズ</strong>が有効なことがあります。ザーッという一定の音が、子宮内と似た環境を作り出し安心感を与えます。<strong>かけっぱなしでも基本的にはOK</strong>ですが、音量は会話が妨げられない程度（50dB以下が目安）にし、赤ちゃんから少し離して設置しましょう。</li>
-              <li><strong>温度：</strong>前述の通り、赤ちゃんは体温調節が苦手。季節に合わせて室温を調整しましょう。（目安：夏25-27℃、春秋20-22℃、冬18-20℃）。赤ちゃんの様子を見て、暑すぎたり寒すぎたりしないか確認を。</li>
-              <li><strong>湿度：</strong>快適な湿度は<strong>50%前後</strong>が目安。加湿器や除湿機で調整しましょう。</li>
-              <li><strong>肌触り：</strong>パジャマやシーツ、スリーパーなどの<strong>肌触り</strong>も重要です。チクチクしたりゴワゴワしたりすると、不快感で眠りを妨げることがあります。赤ちゃんが心地よいと感じる素材を選んであげましょう。</li>
+              <li><strong>光：</strong>
+                  <ul>
+                      <li><strong>夜は「真っ暗」が理想：</strong>メラトニン分泌を最大化し、深い睡眠を促すため、<strong class="highlight">遮光カーテン</strong>を使って外からの光（街灯、朝日など）をしっかり遮断しましょう。ドアの隙間やカーテンの下からの<strong class="highlight">光漏れ対策</strong>（タオルやクッションで塞ぐ）も忘れずに。</li>
+                      <li><strong>朝は「明るく」：</strong>決まった時間にカーテンを開け、太陽光を取り入れ、体内時計をリセットします。</li>
+                      <li><strong>お世話の光：</strong>夜間のお世話には、<strong class="highlight">暖色系で明るさを最小限に調節できる足元灯や授乳ライト</strong>を用意し、必要な時だけ、赤ちゃんに直接光が当たらないように使います。</li>
+                  </ul>
+              </li>
+              <li><strong>音：</strong>
+                  <ul>
+                      <li><strong>静かすぎもNG？：</strong>完全な無音状態だと、ちょっとした物音（床のきしみ、外の車の音など）で起きてしまうことがあります。</li>
+                      <li><strong>ホワイトノイズの活用：</strong>「ザー」「ゴー」といった<strong class="highlight">単調で連続的な音（ホワイトノイズ、ピンクノイズなど）</strong>は、子宮内の音に似ているとも言われ、赤ちゃんを安心させ、周囲の生活音をマスキング（覆い隠す）効果があります。専用マシンやアプリがありますが、<strong class="highlight">音量は会話が妨げられない程度（50dB以下目安）、赤ちゃんから1-2m離して設置</strong>し、スピーカーが直接赤ちゃんに向かないようにしましょう。<strong class="highlight">一晩中かけっぱなしでも基本的には問題ない</strong>とされていますが、依存が気になる場合は、寝入った後に徐々に音量を下げるか、タイマーで切るようにしても良いでしょう。</li>
+                  </ul>
+              </li>
+               <li><strong>温度：</strong>
+                  <ul>
+                      <li><strong>快適な室温をキープ：</strong>赤ちゃんは体温調節が苦手。エアコンや暖房で<strong class="highlight">一年を通して快適な室温（目安：夏25-27℃、春秋20-22℃、冬18-20℃）</strong>を保ちましょう。ただし、これはあくまで目安。</li>
+                      <li><strong>赤ちゃんの様子で判断：</strong><strong class="highlight">赤ちゃんの首の後ろや背中を触って、汗ばんでいないか、冷たすぎないかを確認</strong>するのが最も確実です。手足は末端のため冷たくなりやすいので、体幹部の温度を参考にしましょう。</li>
+                      <li><strong>着せすぎに注意：</strong>特に冬場、暖房を効かせた上で厚着させすぎると、<strong class="highlight">うつ熱やSIDSのリスク</strong>にもなりかねません。室温に合わせて服装（スリーパーなど）で調整します。</li>
+                  </ul>
+              </li>
+              <li><strong>湿度：</strong>
+                  <ul>
+                      <li><strong>理想は50%前後：</strong><strong class="highlight">乾燥（40%以下）</strong>は、鼻や喉の粘膜を傷つけ、ウイルス感染しやすくなったり、鼻詰まりの原因になったりします。<strong class="highlight">高湿度（60%以上）</strong>は、カビやダニが繁殖しやすくなり、アレルギーの原因になることも。</li>
+                      <li><strong>加湿器・除湿機で調整：</strong>温湿度計を設置し、必要に応じて加湿器や除湿機を使って、<strong class="highlight">40%～60%の範囲</strong>に保つようにしましょう。加湿器を使う場合は、タンク内の水を毎日替え、定期的に清掃して清潔を保つことが重要です。</li>
+                  </ul>
+              </li>
+               <li><strong>肌触り：</strong>
+                  <ul>
+                      <li><strong>直接肌に触れるもの：</strong>シーツ、パジャマ、スリーパーなど、<strong class="highlight">直接赤ちゃんの肌に触れるものの素材感</strong>は、睡眠の快適さを左右する隠れた重要ポイントです。</li>
+                      <li><strong>心地よい素材を選ぶ：</strong>チクチクする化学繊維や、ゴワゴワする縫い目、硬いタグなどが不快感を与え、寝つきを悪くすることがあります。<strong class="highlight">綿やガーゼなど、柔らかく通気性の良い、赤ちゃんが心地よいと感じる素材</strong>を選んであげましょう。洗濯の際に柔軟剤を使いすぎると、赤ちゃんの肌への刺激になることもあるので注意が必要です。</li>
+                  </ul>
+              </li>
           </ul>
       </div>
     </details>
 
     <details>
-      <summary>安全な寝床の基本（SIDS予防）</summary>
+      <summary>最重要！安全な寝床の作り方（SIDS予防策）</summary>
       <div>
           <div class="important-point">
-              <strong>【最重要】安全な睡眠環境の原則</strong>
+              <h3>⚠️ 赤ちゃんの命を守る！安全な睡眠環境の絶対原則</h3>
+              <p>SIDS（乳幼児突然死症候群）や睡眠中の事故を防ぐため、以下の点は必ず守ってください。</p>
               <ul>
-                  <li><strong>仰向けで寝かせる（Back to Sleep）：</strong>うつ伏せ寝や横向き寝はSIDSのリスクを高めます。必ず仰向けで寝かせましょう。</li>
-                  <li><strong>硬めの敷布団・マットレスを使用する：</strong>柔らかい布団は顔が埋まって窒息する危険があります。ベビーベッドのマットレスは安全基準を満たした硬さのものを選びましょう。</li>
-                  <li><strong>ベビーベッドを使用し、親とは別の寝床で寝る（同室別床）：</strong>添い寝は窒息や転落のリスクがあります。できるだけベビーベッドを使用し、親のベッドのすぐ隣に置くなどして、同じ部屋で寝る「同室別床」が推奨されます。</li>
-                  <li><strong>ベッドの中には何も置かない：</strong>枕、掛け布団、ぬいぐるみ、ベッドバンパー、柔らかいおもちゃなどは、窒息のリスクになるため、赤ちゃんの睡眠スペースには置かないでください。（1歳未満）</li>
-                  <li><strong>シーツはぴったりとフィットさせる：</strong>ゆるんだシーツが赤ちゃんの顔にかからないよう、マットレスにぴったりとフィットさせます。</li>
-                  <li><strong>あたためすぎない：</strong>着せすぎや暖房のかけすぎはSIDSのリスクを高める可能性があります。室温に合わせて適切な服装（スリーパーなど）を選びましょう。</li>
-                  <li><strong>親がタバコを吸わない：</strong>妊娠中および産後の喫煙はSIDSのリスクを大幅に高めます。受動喫煙も避けてください。</li>
-                  <li><strong>タミータイム（腹ばい練習）：</strong>起きている時間に、親が見守る中でタミータイムを行うことは、赤ちゃんの運動発達を促し、SIDSのリスクを低減するとも言われています。</li>
-                  <li><strong>おくるみ使用時の注意：</strong>使う場合は、きつく巻きすぎず股関節が自由に動かせるようにし、布が顔にかからないように注意。<strong>寝返りの兆候が見られたら（または生後3-4ヶ月を目安に）使用を中止</strong>します。</li>
+                  <li><strong class="highlight">【仰向け寝（Back to Sleep）】</strong>睡眠時は<strong class="highlight">常に仰向け</strong>で寝かせます。うつ伏せ寝や横向き寝はSIDSのリスクを大幅に高めます。自分で寝返りができるようになった後も、寝かせ始めは必ず仰向けにします。（寝返りでうつ伏せになっても、自分で戻れるなら無理に戻す必要はないとされていますが、周囲の環境はより安全に配慮してください）</li>
+                  <li><strong class="highlight">【硬めの寝床（Firm Sleep Surface）】</strong><strong class="highlight">安全基準を満たしたベビーベッド用の硬めのマットレス</strong>を使用します。柔らかい敷布団、ソファ、ウォーターベッド、親のベッドなどは、顔が埋まって窒息する危険があるため使用しないでください。</li>
+                  <li><strong class="highlight">【ベビーベッド推奨・同室別床（Use Crib, Room-Sharing without Bed-Sharing）】</strong>親のベッドでの添い寝は、親が寝ている間に赤ちゃんを圧迫したり、布団が顔にかかったりする窒息・SIDSのリスクがあります。できるだけ<strong class="highlight">ベビーベッドやベビー用敷布団など、赤ちゃん専用の安全な寝床</strong>を用意し、それを<strong class="highlight">親の寝室に置いて</strong>見守る「同室別床」が最も安全と推奨されています（少なくとも生後6ヶ月、できれば1歳まで）。</li>
+                  <li><strong class="highlight">【ベッド内は空っぽに（Keep Crib Bare）】</strong><strong class="highlight">枕、掛け布団、ブランケット、ぬいぐるみ、ベッドバンパー（ベッドガード）、おもちゃなど、柔らかいものは一切ベビーベッドの中に入れない</strong>でください。これらは全て窒息やSIDSのリスクになります（1歳未満）。</li>
+                  <li><strong class="highlight">【シーツはぴったりと（Fitted Sheet）】</strong>マットレスには、<strong class="highlight">サイズがぴったり合ったボックスシーツのみ</strong>を使用し、たるみがないようにしっかりと装着します。</li>
+                  <li><strong class="highlight">【あたためすぎない（Avoid Overheating）】</strong>着せすぎや暖房のかけすぎに注意し、室温に合った服装（スリーパー推奨）を選びます。</li>
+                  <li><strong class="highlight">【禁煙（Avoid Smoke Exposure）】</strong>妊娠中および産後の母親の喫煙、同室者の喫煙（受動喫煙）は、SIDSのリスクを大幅に高めます。赤ちゃんのいる環境では絶対にタバコを吸わないでください。</li>
+                  <li><strong>【タミータイムの実践（Practice Tummy Time）】</strong>起きている時間に、<strong class="highlight">大人が必ず見守る中で</strong>、うつ伏せで遊ぶ時間（タミータイム）を設けることは、首や背中の筋肉の発達を促し、SIDSのリスクを低減する可能性も示唆されています。</li>
+                  <li><strong>【ベビーラック・バウンサーでの睡眠はNG】</strong>スイング機能付きのベビーラックやバウンサーは、あやすのには役立ちますが、<strong class="highlight">睡眠のための安全な場所ではありません</strong>。傾斜がついているため気道が圧迫されたり、ベルトがないとずり落ちたりする危険があります。眠ってしまったら、速やかに安全なベビーベッドなどに移しましょう。</li>
               </ul>
           </div>
            <div class="expert-comment">
-              SIDS（乳幼児突然死症候群）は、原因不明で突然赤ちゃんが亡くなる病気ですが、これらの安全な睡眠環境を守ることで、リスクを大幅に減らすことができます。必ず実践してください。ベビーラック（特にスイング機能付き）は、短時間のあやしには役立つこともありますが、<strong>長時間の睡眠には推奨されません</strong>。安全な寝床で寝かせることを基本としましょう。
+              これらの安全対策は、どれか一つだけやれば良いというものではなく、<strong class="highlight">組み合わせて実践することで、SIDSや事故のリスクを最大限に減らす</strong>ことができます。最新の情報は、米国小児科学会（AAP）や厚生労働省などの公的機関のガイドラインを確認するようにしてください。
           </div>
       </div>
     </details>
 
     <details>
-      <summary>快適に寝られる服装の目安（室温別）</summary>
+      <summary>季節と室温に合わせた快適な服装（スリーパー活用術）</summary>
       <div>
-        <p>室温に合わせて、肌着やパジャマ、スリーパーを組み合わせます。これはあくまで目安なので、赤ちゃんの様子（汗をかいていないか、手足が冷たすぎないかなど）を見て調整してください。<strong>素材の肌触り</strong>も確認しましょう。</p>
+        <p>掛け布団が使えない赤ちゃんの体温調節は、基本的に「肌着＋パジャマ＋スリーパー」の組み合わせで行います。以下は室温に応じた服装の目安ですが、赤ちゃんの個性（暑がり・寒がり）や活動量、寝具の素材によっても変わるので、<strong class="highlight">赤ちゃんの様子（首筋や背中を触って汗ばんでいないか、冷たすぎないか）をこまめにチェックして調整</strong>することが最も大切です。</p>
         <ul>
-          <li><strong>15-17℃：</strong>肌着 + 長袖パジャマ + 厚手のスリーパー（フリース素材など）</li>
-          <li><strong>18-21℃：</strong>肌着 + 長袖パジャマ + 中厚手のスリーパー（4-6重ガーゼなど）</li>
-          <li><strong>22-23℃：</strong>半袖パジャマ or 薄手の長袖パジャマ + スリーパー（4-6重ガーゼなど）</li>
-          <li><strong>24-25℃：</strong>肌着 or 半袖パジャマ + 薄手のスリーパー（ダブルガーゼなど）</li>
-          <li><strong>26℃以上：</strong>肌着 or 半袖パジャマのみ（暑い場合は肌着のみでも）</li>
+          <li><strong>【15-17℃】（冬の寒い時期など）</strong>
+            <ul><li>長袖肌着 ＋ 厚手の長袖パジャマ ＋ <strong class="highlight">厚手のスリーパー（フリース、ダウン、厚手キルトなど）</strong></li></ul>
+          </li>
+          <li><strong>【18-21℃】（冬の暖房時、春秋など）</strong>
+            <ul><li>長袖肌着 ＋ 長袖パジャマ ＋ <strong class="highlight">中厚手のスリーパー（6重ガーゼ、薄手キルト、ボアなど）</strong></li></ul>
+          </li>
+          <li><strong>【22-23℃】（快適な春秋、夏の冷房時など）</strong>
+            <ul><li>半袖肌着 or 長袖肌着 ＋ 薄手の長袖パジャマ or 半袖パジャマ ＋ <strong class="highlight">薄〜中厚手のスリーパー（4〜6重ガーゼなど）</strong></li></ul>
+          </li>
+          <li><strong>【24-25℃】（やや暑い時期、夏の冷房時など）</strong>
+            <ul><li>半袖肌着 or タンクトップ肌着 ＋ 半袖パジャマ ＋ <strong class="highlight">薄手のスリーパー（ダブルガーゼ、タオル地など）</strong> or スリーパーなし</li></ul>
+          </li>
+          <li><strong>【26℃以上】（夏の暑い時期）</strong>
+            <ul><li>半袖肌着 or タンクトップ肌着 のみ、あるいは 半袖パジャマのみ。<strong class="highlight">暑い場合はスリーパーなし</strong>。汗をよく吸う素材を選びましょう。</li></ul>
+          </li>
         </ul>
         <div class="expert-comment">
-            スリーパーは、寝ている間にはだけたり、顔にかかったりする心配がないため、掛け布団の代わりとして非常に便利で安全です。様々な素材や厚さのものがあるので、季節に合わせて選びましょう。足が冷える場合は、レッグウォーマーを併用するのも良いでしょう。
+            <strong>スリーパー</strong>は、寝ている間にはだけて体が冷えたり、逆に布団が顔にかかって窒息したりする心配がないため、<strong class="highlight">掛け布団の代わりに使える非常に安全で便利なアイテム</strong>です。袖付き・袖なし、前開き・横開き・足元が開くタイプ、様々な素材（ガーゼ、タオル地、フリース、ダウンなど）があるので、季節や赤ちゃんの好みに合わせて選びましょう。足先が冷えるのが気になる場合は、スリーパーの上から<strong class="highlight">レッグウォーマー</strong>を履かせるのも良い方法です。
         </div>
       </div>
     </details>
 
     <details>
-        <summary>部屋を出るとぐずる場合</summary>
+        <summary>ママ・パパが部屋を出ると泣いちゃう…どうしたら？</summary>
         <div>
-            <p>赤ちゃんが寝入ったと思って部屋を出ようとすると泣いてしまう場合、<strong>「ママ（パパ）はちょっとお部屋の外にいるけど、ちゃんといるからね。おやすみ」</strong>のように、<strong>毎回同じ言葉で声かけをしてから部屋を出る</strong>ようにすると、赤ちゃんが見通しを持てるようになり、安心感につながることがあります。また、日中に「ママ、ちょっとトイレに行ってくるね、すぐ戻るから待っててね」のように、短時間だけ待たせる練習をし、戻ってきたら「待ててえらかったね！」と褒めることを繰り返す（いわゆる「ひとりでも大丈夫」トレーニング）のも、分離不安の軽減に繋がる可能性があります。</p>
+            <p>赤ちゃんが寝入ったと思ってそっと部屋を出ようとした途端に「ギャー！」と泣き出す…いわゆる「背中スイッチ」や「気配スイッチ」に悩む親御さんは多いですね。これは、赤ちゃんが親の存在（特に寝かしつけてくれた人）がいなくなることに不安を感じる（分離不安）ために起こることが多いです。</p>
+            <ul>
+                <li><strong>「魔法の言葉」で予告：</strong>部屋を出る前に、<strong class="highlight">毎回同じ短い言葉</strong>で優しく声をかける習慣をつけましょう。例えば、「ママ（パパ）はすぐそこにいるからね。おやすみ、大好きだよ」のように。これを繰り返すことで、赤ちゃんは「この言葉の後はいなくなるけど、大丈夫なんだ」と学習し、見通しが持てるようになります。</li>
+                <li><strong>完全に寝入る前に置く練習：</strong>抱っこなどで寝かしつけている場合、完全にぐっすり眠ってから置くのではなく、<strong class="highlight">うとうとして力が抜けてきた段階</strong>で、そっと寝床に置いてみましょう。最初は泣くかもしれませんが、トントンや声かけで安心させ、寝床で寝付く練習をします。（「入眠の癖」のセクションも参照）</li>
+                <li><strong>日中の「待つ」練習：</strong>日中の起きている時間に、「ママ、ちょっとトイレに行ってくるね。1分だけ待っててね」のように、<strong class="highlight">短い時間だけ親と離れて待つ経験</strong>をさせ、戻ってきたら「待ててえらかったね！ありがとう！」と思い切り褒めてあげることを繰り返します。これにより、「ママ（パパ）は離れても必ず戻ってくる」という信頼感が育ち、夜の分離不安の軽減にもつながることがあります。（視界から消えるのが不安な場合は、最初は見える範囲で始めます）</li>
+                <li><strong>安心アイテムの活用（1歳以降）：</strong>前述の通り、1歳以降であれば、安全に配慮した上で、お気に入りの小さなタオルやぬいぐるみを「ねんねのお守り」として持たせることで、親がいなくても安心感を得られる場合があります。</li>
+            </ul>
+            <div class="expert-comment">
+                部屋を出ると泣いてしまうのは、親への強い愛着の証でもあります。焦らず、根気強く、<strong class="highlight">「大丈夫だよ、ちゃんと見守っているよ」という安心感</strong>を与え続けることが大切です。
+            </div>
         </div>
     </details>
   </section>
 
   <section>
-    <h2 id="sleep-habits">入眠の癖（睡眠の関連付け）とその対策</h2>
-    <p>赤ちゃんが「特定のこと」がないと眠れない状態を「睡眠の関連付け（Sleep Association）」と言います。これが強いと、夜中に目が覚めた時に、同じ状況でないと再び眠りにつくのが難しくなります。特に眠い時や寝起きは、赤ちゃんの脳のバランスが不安定で、<strong>寝ぐずりや癇癪を起こしやすい</strong>こともあります。</p>
-    <h3>代表的な入眠の癖</h3>
+    <h2 id="sleep-habits">「これがないと眠れない！」入眠の癖（睡眠の関連付け）とその対策</h2>
+    <p>「おっぱいじゃないと寝ない」「抱っこで揺らさないと寝ない」…このように、赤ちゃんが眠りにつくために<strong class="highlight">特定の状況や行動（親の介入）を必要とする状態</strong>を「睡眠の関連付け（Sleep Association）」または「入眠儀式」と呼びます。これが確立されると、夜中に目が覚めた時にも、<strong class="highlight">同じ状況でないと再び眠りにつくのが難しく</strong>なり、結果として夜泣きや頻回覚醒の原因となることがあります。</p>
+    <p>特に眠い時や寝起きは、赤ちゃんの脳内の覚醒と睡眠のバランスが不安定になりやすく、思い通りにならないと<strong class="highlight">激しくぐずったり、癇癪を起こしたり（メルトダウン）</strong>することもあります。これは脳が未熟なためであり、親を困らせようとしているわけではありません。</p>
+    <h3>代表的な入眠の癖（強い関連付けになりやすいもの）</h3>
     <ul>
-      <li>おっぱい（授乳）を飲みながら寝落ち</li>
-      <li>抱っこでゆらゆらされながら寝る</li>
-      <li>親のお腹の上や腕の中で寝る</li>
-      <li>親とぴったりくっついて寝る</li>
-      <li>おしゃぶりがないと寝られない（※夜中に外れて泣く場合）</li>
+      <li><strong>授乳（おっぱい・ミルク）</strong>しながら寝落ち</li>
+      <li><strong>抱っこでゆらゆら</strong>（立って歩きながら、バランスボールなど）</li>
+      <li>親の<strong>お腹の上や腕の中</strong>でないと寝ない</li>
+      <li>親と<strong>ぴったりくっついて</strong>（添い寝でないと）寝ない</li>
+      <li><strong>おしゃぶり</strong>がないと寝られない（※夜中に外れて自分で戻せない場合）</li>
+      <li>その他（特定の音楽、トントン、背中スイッチなど）</li>
     </ul>
     <div class="expert-comment">
-        これらの癖自体が悪いわけではありません。しかし、夜中に何度も起きてしまい、親子ともに睡眠不足でつらい状況であれば、赤ちゃんが<strong>「自力で寝つく力（セルフねんね）」</strong>を身につけるサポートをしてあげることを考えても良いでしょう。
+        まず強調したいのは、これらの<strong class="highlight">入眠の癖自体が「悪い」わけではない</strong>ということです。特に低月齢のうちは、授乳や抱っこは赤ちゃんに安心感を与え、眠りに導く自然な方法です。問題となるのは、その癖が<strong class="highlight">「それがないと絶対に眠れない」</strong>というほど強固になり、夜中に何度も親を起こさなければならず、結果的に<strong class="highlight">親子ともに深刻な睡眠不足に陥ってしまう</strong>場合です。もし現状で親子ともに困っていないのであれば、無理に変える必要はありません。しかし、もし改善したいと考えるのであれば、赤ちゃんが<strong class="highlight">「自力で寝つく力（セルフねんね、セルフスーシング）」</strong>を身につけるためのサポートを検討する価値があります。
     </div>
 
-    <h3>「自分で寝る力」を育むには？</h3>
-    <p>基本は、<strong>「眠いけれどまだ起きている状態」で寝床（ベビーベッドなど）に置き、親のサポートを少しずつ減らしていく</strong>ことです。赤ちゃんが「眠りたくない！」という態度を示しても、<strong>決めた寝かしつけ方には一貫性を持って対応する</strong>ことが大切です。泣いてもすぐには抱き上げず、少し様子を見たり、声かけやトントンで安心させたりしながら、赤ちゃんが自分で落ち着いて眠りにつく練習をします。</p>
+    <h3>「自分で寝る力」を育むステップ</h3>
+    <p>セルフねんねを促す基本原則は、<strong>「眠いけれど、まだ<span class="highlight">起きている状態</span>で寝床（ベビーベッドや布団）に置く」</strong>ことです。そして、親の介入（サポート）を<strong class="highlight">徐々に減らしていく</strong>こと。これが、赤ちゃんが「寝床で」「自分で」眠りにつくことを学習するプロセスです。</p>
+    <ul>
+        <li><strong>眠いサインを見逃さない：</strong>疲れすぎる前に寝かしつけを開始することが成功の鍵です。</li>
+        <li><strong>一貫性が重要：</strong>赤ちゃんが「眠りたくない！」と抵抗を見せても、決めた寝かしつけの方法（例：寝床に置いてトントンする）を<strong class="highlight">一貫して続ける</strong>ことが大切です。日によって対応を変えると、赤ちゃんは混乱してしまいます。</li>
+        <li><strong>少し待つ勇気：</strong>泣いてもすぐに抱き上げたりせず、まずは数分（前述の「ポーズ」）、声かけや優しいトントンなどで様子を見ましょう。赤ちゃんが自分で落ち着くチャンスを与えます。</li>
+        <li><strong>段階的にサポートを減らす：</strong>以下の「クセ取り練習」のステップを参考に、強いサポートから弱いサポートへと徐々に移行していきます。</li>
+    </ul>
 
-    <h3>「クセ取り練習」：サポートの段階</h3>
-    <p>親のサポートの強弱を意識し、徐々に弱いサポートへと移行していきます。</p>
+    <h3>「クセ取り練習」：サポートの段階（強い→弱い）</h3>
+    <p>現在行っている寝かしつけ方法（例：抱っこゆらゆら）から、一つ下の段階のサポート（例：座って抱っこ）に移行し、それに慣れたらさらに下の段階へ…というように、<strong class="highlight">スモールステップで進めていく</strong>のが成功のコツです。</p>
     <ol>
-      <li>授乳やミルクで寝かす（サポート：強）</li>
-      <li>抱っこで寝かす</li>
-      <li>トントン、なでなでで寝かす</li>
-      <li>声かけだけで寝かす</li>
-      <li>そばにいるだけで寝かす</li>
-      <li>一人で寝つく（サポート：弱）</li>
+      <li><strong>授乳やミルクで寝落ちさせる</strong>（サポート：最強）</li>
+      <li><strong>抱っこで立って歩きながら、または激しく揺らして寝かす</strong></li>
+      <li><strong>抱っこで座って、静かに揺らす or 揺らさずに寝かす</strong></li>
+      <li><strong>寝床に置いた状態で、体を密着させたり、強めにトントンしたりして寝かす</strong></li>
+      <li><strong>寝床に置いた状態で、軽くトントン、なでなでで寝かす</strong></li>
+      <li><strong>寝床のそばで、優しい声かけだけで寝かす</strong></li>
+      <li><strong>寝床のそばに、ただ静かに座っているだけで寝かす</strong></li>
+      <li><strong>部屋にはいるが、少し離れた場所から見守る</strong></li>
+      <li><strong>部屋を出て、自分で寝つくのを待つ</strong>（サポート：最弱 / セルフねんね）</li>
     </ol>
 
     <details>
-        <summary>授乳寝落ちをやめるには？</summary>
+        <summary>【具体策①】授乳寝落ち（おっぱい・ミルクねんね）をやめるには？</summary>
         <div>
+            <p>授乳と睡眠が強く結びついている場合、これを切り離すことが目標です。</p>
             <ol>
-                <li><strong>寝る直前におっぱい（哺乳瓶）を口から外す：</strong>完全に寝入る前に、そっと外して口を閉じさせます。嫌がる場合は、少し前から徐々に試します。</li>
-                <li><strong>授乳をルーティンの最後にしない：</strong>お風呂の後など、ルーティンの早い段階で授乳を済ませ、その後、絵本を読むなど他の活動を挟んでから寝床へ連れて行きます。</li>
-                <li><strong>寝床で寝る練習：</strong>授乳後、まだ起きている状態で寝床に置き、トントンや声かけで寝かしつけます。</li>
+                <li><strong>ステップ1：寝る直前に外す練習</strong>
+                    <ul><li>授乳中に赤ちゃんがうとうとしてきたら、<strong class="highlight">完全に寝入る前に</strong>そっと乳首（または哺乳瓶の乳首）を口から外します。</li><li>もし赤ちゃんが起きてしまって泣いたら、再度吸わせて落ち着かせ、またうとうとしたら外す、を繰り返します。</li><li>最初は抵抗があるかもしれませんが、根気強く続けることで、「吸わなくても眠れる」ことを学習していきます。</li></ul>
+                </li>
+                <li><strong>ステップ2：授乳のタイミングをずらす</strong>
+                    <ul><li>就寝ルーティンの<strong class="highlight">一番最後ではなく、もっと早い段階</strong>（例：お風呂の後、パジャマに着替えた後など）に授乳を済ませます。</li><li>授乳後、絵本を読む、子守唄を歌うなど、<strong class="highlight">別のリラックスできる活動を挟んでから</strong>寝床へ連れて行きます。</li><li>これにより、「授乳＝即寝る」の結びつきを弱めます。</li></ul>
+                </li>
+                <li><strong>ステップ3：寝床での寝かしつけに移行</strong>
+                    <ul><li>授乳が終わったら、まだ起きている（またはうとうとしている）状態で<strong class="highlight">「おやすみ」と声をかけて寝床に置きます</strong>。</li><li>その後は、トントン、なでなで、声かけなど、授乳以外の方法で寝かしつけを試みます。（上記のサポート段階を参考に）</li></ul>
+                </li>
             </ol>
         </div>
     </details>
     <details>
-        <summary>抱っこねんねをやめるには？</summary>
+        <summary>【具体策②】抱っこねんね（ゆらゆら寝）をやめるには？</summary>
         <div>
+            <p>抱っこや揺れの刺激がないと眠れない場合、その刺激を徐々に減らしていくことが目標です。</p>
             <ol>
-                <li><strong>抱っこの揺れを減らす：</strong>徐々に揺れの強さや頻度を減らしていきます。</li>
-                <li><strong>座って抱っこする：</strong>立って揺らすのではなく、座った状態で抱っこして寝かしつけます。</li>
-                <li><strong>寝床におろすタイミングを早くする：</strong>完全に寝入る前、うとうとしてきた段階で寝床におろします。泣いたら、少しだけ抱っこして落ち着かせ、またおろす、を繰り返します。（フェイドアウト法）</li>
-                <li><strong>寝床でトントンなどに移行：</strong>抱っこせず、寝床に置いた状態でトントンやなでなでで寝かしつけます。</li>
+                <li><strong>ステップ1：揺れの強さ・頻度を減らす</strong>
+                    <ul><li>抱っこしながら、まずは<strong class="highlight">揺れの強さや速さ、動きの大きさを少しずつ小さく</strong>していきます。</li><li>例えば、立って歩き回っていたのを、その場で足踏みに変える。激しいゆらゆらを、ゆっくりとした横揺れに変える、など。</li></ul>
+                </li>
+                <li><strong>ステップ2：座って抱っこに移行</strong>
+                    <ul><li>立った状態での抱っこに慣れているなら、次は<strong class="highlight">椅子やソファに座った状態で抱っこ</strong>して寝かしつけてみます。</li><li>座った状態でも、最初は少し揺らしたりトントンしたりしてもOKです。</li></ul>
+                 </li>
+                 <li><strong>ステップ3：揺らさずに抱っこ</strong>
+                    <ul><li>座って抱っこで寝付けるようになったら、次は<strong class="highlight">揺らすのをやめ、ただ静かに抱っこしているだけ</strong>で寝かしつけられるように試みます。</li></ul>
+                </li>
+                <li><strong>ステップ4：寝床におろすタイミングを早くする</strong>
+                    <ul><li>完全に寝入ってからではなく、<strong class="highlight">うとうとして体がリラックスしてきた段階</strong>で、そっと寝床におろしてみます。（「そーっと、ゆっくり」がコツ）</li><li>もし置いた途端に泣いてしまったら、すぐにまた抱き上げるのではなく、<strong class="highlight">まずは寝床でトントンしたり声かけしたり</strong>して様子を見ます。それでも泣き止まなければ、少しだけ抱っこして落ち着かせ、<strong class="highlight">再び眠る前に</strong>また寝床におろす、を繰り返します（ピックアップ/プットダウン法に近い考え方）。</li></ul>
+                 </li>
+                <li><strong>ステップ5：寝床での寝かしつけに移行</strong>
+                    <ul><li>最終的には、抱っこせずに、<strong class="highlight">最初から寝床に置いた状態で</strong>、トントンやなでなで、声かけなどで寝かしつけられることを目指します。（上記のサポート段階を参考に）</li></ul>
+                </li>
             </ol>
         </div>
     </details>
      <div class="expert-comment">
-        クセを取るには時間と根気が必要です。<strong>一貫性を持って続けること</strong>が成功の鍵です。一度にすべてを変えようとせず、少しずつステップアップしていきましょう。うまくいかない日があっても、自分を責めずに、また翌日からトライしましょう。<strong>日中のコミュニケーションや遊びを通して赤ちゃんの心を満たし、安心感の土台を築く</strong>ことも、夜の寝かしつけに繋がります。
+        入眠の癖を変えるには、<strong class="highlight">時間と親の一貫した努力</strong>が必要です。数日で劇的に変わることは稀で、むしろ一時的に抵抗が強まる（泣きが悪化する）こともあります。しかし、そこで諦めずに<strong class="highlight">「この子は自分で眠る力を持っている」と信じて、優しく、しかし毅然とした態度で</strong>サポートを続けることが成功への道です。うまくいかない日があっても、自分や赤ちゃんを責めないでください。一日休んで、また翌日からトライすれば良いのです。そして、<strong class="highlight">日中の親子のコミュニケーションとスキンシップを大切にすること</strong>が、夜の寝かしつけの土台となることを忘れないでください。赤ちゃんが日中に十分に満たされていれば、夜も安心して眠りにつきやすくなります。
     </div>
   </section>
 
   <section>
-    <h2 id="sleep-training">ねんねトレーニング（ネントレ）について</h2>
-    <p>ねんねトレーニング（スリープトレーニング）とは、赤ちゃんが親の助けなしに、自力で寝つけるように練習することです。様々な方法がありますが、<strong>「泣かせる」ことだけがネントレではありません。</strong>赤ちゃんの気質やご家庭の方針に合った方法を選びましょう。</p>
+    <h2 id="sleep-training">自分で寝る力を育む！ねんねトレーニング（ネントレ）</h2>
+    <p>ねんねトレーニング（スリープトレーニング、または「ネントレ」）とは、赤ちゃんが<strong class="highlight">親の助け（授乳、抱っこ、トントンなど）なしに、自力で寝つけるようになるための練習</strong>のことです。しばしば「赤ちゃんを泣かせること」と誤解されがちですが、実際には様々なアプローチがあり、<strong class="highlight">必ずしも長時間泣かせっぱなしにする方法だけではありません</strong>。目的は、赤ちゃんが自分で自分を落ち着かせて眠りにつくスキル（セルフねんね/セルフスーシング）を習得し、結果として親子ともに質の高い睡眠を得ることです。</p>
 
-    <h3>開始の目安と条件</h3>
+    <h3>始める前に：ネントレ開始の目安と条件</h3>
+    <p>ネントレを始めるかどうか、いつ始めるかは、各家庭の判断によりますが、以下の点を考慮しましょう。</p>
     <ul>
-        <li><strong>時期：</strong>一般的に、昼夜の区別がつき始め、睡眠サイクルが安定してくる<strong>生後4〜6ヶ月以降</strong>が目安とされますが、赤ちゃんの個性や発達、健康状態によります。</li>
-        <li><strong>条件：</strong>
+        <li><strong>適切な時期：</strong>
             <ul>
-                <li>赤ちゃんが健康であること（病気や体調不良の時は避ける）</li>
-                <li>生活リズムがある程度整っていること</li>
-                <li>安全な睡眠環境が確保されていること</li>
-                <li><strong>親（家族）がネントレの必要性を感じ、一貫して取り組む覚悟があること</strong></li>
-                <li>家族内で協力体制が取れていること</li>
+                <li>一般的に、昼夜の区別がある程度つき、睡眠サイクルが安定し始め、セルフスーシングの能力が発達してくる<strong class="highlight">生後4〜6ヶ月以降</strong>が目安とされます。</li>
+                <li>ただし、これはあくまで目安であり、赤ちゃんの個性（気質）、発達段階、健康状態によって適切な時期は異なります。早産児の場合は、修正月齢で考える必要があります。</li>
+                <li><strong class="highlight">新生児期（0〜3ヶ月）は、まだ睡眠リズムが未熟であり、頻繁な授乳も必要なため、基本的にネントレは推奨されません。</strong>この時期は、安全な睡眠環境を整え、赤ちゃんの要求に応え、安心感を与えることを最優先します。</li>
+            </ul>
+        </li>
+        <li><strong>必須条件：</strong>
+            <ul>
+                <li><strong>赤ちゃんが健康であること：</strong>風邪、発熱、耳の感染症、アレルギー、その他体調不良がある時は避けましょう。まずは治療と回復を優先します。</li>
+                <li><strong>生活リズムの基礎ができていること：</strong>ある程度の起床・就寝時間、日中の活動・お昼寝のリズムが整っている方が、ネントレはスムーズに進みやすいです。</li>
+                <li><strong>安全な睡眠環境が確保されていること：</strong>SIDS予防策（仰向け寝、硬い寝床、ベッド内は空っぽなど）が徹底されていることが大前提です。</li>
+                <li><strong class="highlight">親（主な養育者）の覚悟と一貫性：</strong>ネントレは、時に赤ちゃんの涙と向き合う必要があります。途中で挫折しないよう、「なぜネントレをするのか」という目的意識を明確にし、<strong class="highlight">決めた方法を一貫して続ける覚悟</strong>が必要です。</li>
+                <li><strong class="highlight">家族の合意と協力：</strong>ネントレを始める前に、必ずパートナーや同居の家族とよく話し合い、方針について合意を得ておくことが不可欠です。全員が協力し、一貫した対応をとることが成功の鍵となります。</li>
             </ul>
         </li>
     </ul>
 
-    <h3>ねんねトレーニングの主なタイプ</h3>
-    <p>※どの方法を選ぶかは、ご家庭の方針や赤ちゃんの気質に合わせて検討しましょう。</p>
+    <h3>ネントレの主な方法（タイプ別）</h3>
+    <p>ネントレには様々な方法があり、それぞれにメリット・デメリットがあります。赤ちゃんの気質（例えば、少しのことで激しく泣く子か、比較的おっとりしている子か）や、親御さんの考え方（赤ちゃんを泣かせることへの抵抗感など）に合わせて、最適な方法を選びましょう。どの方法を選ぶにしても、<strong class="highlight">始める1週間くらい前から、赤ちゃんに「これから一人でねんねの練習をするよ、大丈夫だよ」と優しく語りかける</strong>と、心の準備に繋がるかもしれません。</p>
     <details>
-        <summary>① 独立型（消去法、Cry It Out - CIO）</summary>
+        <summary>① 独立型（消去法 / Graduated Extinction / CIO系統）</summary>
         <div>
-            <p>就寝ルーティンの後、赤ちゃんを寝床に置き、親は部屋を出ます。泣いてもすぐには入室せず、時間を決めて（例：5分、10分、15分と徐々に長くする）様子を見に行き、短時間（1〜2分）なだめて再び退室します。これを寝付くまで繰り返します。効果は比較的早く出やすいですが、赤ちゃんを長く泣かせることに抵抗を感じる親御さんもいます。</p>
-            <p><strong>手順例（ファーバーメソッドなど）：</strong></p>
+            <p><strong>考え方：</strong>赤ちゃんが泣いてもすぐには介入せず、自分で落ち着く機会を与えることを重視する方法。段階的に親の介入を減らしていきます。</p>
+            <p><strong>代表的な手法（ファーバーメソッドなど）：</strong></p>
             <ol>
-                <li>1週間ほど前から「これから一人でねんねの練習をするよ」と赤ちゃんに優しく語りかける。</li>
-                <li>就寝ルーティン後、眠いけれど起きている状態でベビーベッドへ。「おやすみ」と言って部屋を出る。</li>
-                <li>泣き始めたら時間を測る。初日は3分、次は5分、その次は10分など、決めた時間待つ。（時間はあくまで例）</li>
-                <li>時間が来たら入室し、1〜2分優しく声をかけたりトントンしたりしてなだめる。（抱っこはしない）</li>
-                <li>「大丈夫だよ、おやすみ」と言って再び退室。</li>
-                <li>再び泣き始めたら、次は少し長い時間（例：初日なら5分、10分、12分…）待ってから入室し、同様になだめて退室。</li>
-                <li>これを寝付くまで繰り返す。日ごとに最初の待機時間を長くしていく。（例：2日目は5分から、3日目は10分から）</li>
+                <li>就寝ルーティン後、眠いけれどまだ起きている状態でベビーベッドへ。「おやすみ」と声をかけ、親は部屋を出ます。</li>
+                <li>赤ちゃんが泣き始めたら、<strong class="highlight">あらかじめ決めた時間（例：初日は3分）待ちます</strong>。</li>
+                <li>時間が経ったら部屋に入り、<strong class="highlight">1〜2分程度、落ち着いた声で「大丈夫だよ」「ママ（パパ）はここにいるよ」と声をかけたり、軽くトントンしたりして安心させます</strong>。（※この際、<strong class="highlight">抱っこはしない</strong>のが基本です）</li>
+                <li>長くても2分程度で、「おやすみ」と再び声をかけ、赤ちゃんがまだ泣いていても部屋を出ます。</li>
+                <li>再び泣き始めたら、<strong class="highlight">次は少し長い時間（例：初日なら5分）待ちます</strong>。</li>
+                <li>時間が来たら、同様に1〜2分なだめて退室します。</li>
+                <li>これを、<strong class="highlight">待つ時間を徐々に長くしながら（例：初日は3分→5分→10分→10分…のように上限を決める場合も）、赤ちゃんが寝付くまで繰り返します</strong>。</li>
+                <li>翌日以降は、<strong class="highlight">最初の待機時間を少しずつ長くしていきます</strong>（例：2日目は5分からスタート、3日目は7分からスタートなど）。</li>
             </ol>
+            <p><strong>メリット：</strong>比較的短期間（数日〜1週間程度）で効果が出やすいとされています。</p>
+            <p><strong>デメリット：</strong>赤ちゃんをある程度の時間泣かせることになるため、親にとっては精神的に辛い場合があります。近隣への騒音も気になるかもしれません。</p>
              <div class="expert-comment">
-                この方法は、親の一貫した態度が非常に重要です。途中で諦めて抱き上げたりすると、赤ちゃんは「泣き続ければ助けが来る」と学習してしまい、逆効果になることがあります。始める前に家族でよく話し合い、やり遂げる覚悟が必要です。
+                この方法は、<strong class="highlight">親の一貫性が何よりも重要</strong>です。途中で「かわいそう」とルールを破って抱き上げてしまうと、「泣き続ければ要求が通る」と赤ちゃんが学習してしまい、かえって泣きが悪化したり、トレーニングが振り出しに戻ったりする可能性があります。始める前に、家族全員で手順とルールをしっかり確認し、<strong class="highlight">やり遂げる強い意志</strong>を持つことが必要です。
             </div>
         </div>
     </details>
     <details>
-        <summary>② 見守り型（フェイドアウト法、キャンピングアウト法）</summary>
+        <summary>② 見守り型（フェイドアウト法 / Camping Out / チェアメソッド）</summary>
         <div>
-            <p>就寝ルーティンの後、赤ちゃんを寝床に置き、親はベッドサイドに椅子を置いて座り、赤ちゃんが寝付くまでそばにいます。最初はトントンしたり声かけをしたりしますが、徐々にサポートを減らしていきます。数日ごとに椅子をドアの方へ少しずつ移動させ、最終的に部屋の外から見守るようにします。赤ちゃんを一人にしないため、安心感を与えやすい方法ですが、時間がかかることがあります。</p>
-             <p><strong>手順例（スリープレディシャッフルなど）：</strong></p>
+            <p><strong>考え方：</strong>親がそばにいることで赤ちゃんに安心感を与えつつ、徐々に物理的な距離を取り、最終的に一人で寝られるように導く方法。</p>
+             <p><strong>代表的な手法（スリープレディシャッフルなど）：</strong></p>
              <ol>
-                 <li>1週間ほど前から予告する。</li>
-                 <li>就寝ルーティン後、ベビーベッドへ。親はベッドのすぐ横に椅子を置いて座る。</li>
-                 <li>赤ちゃんが泣いたら、「大丈夫だよ」「ママ（パパ）はここにいるよ」と優しく声をかけたり、軽くトントンしたりする。（基本的に抱っこはしない）</li>
-                 <li>赤ちゃんが寝付くまでそばにいる。</li>
-                 <li>3日間ほど同じ場所で続け、赤ちゃんが慣れてきたら、椅子を少しベッドから離す。</li>
-                 <li>さらに3日間ほど続けたら、また椅子を離す。</li>
-                 <li>最終的にドアの近くまで移動し、最後は部屋の外に出ることを目指す。</li>
+                 <li>就寝ルーティン後、眠いけれど起きている状態でベビーベッドへ。親は<strong class="highlight">ベッドのすぐ横に椅子を置いて座ります</strong>。</li>
+                 <li>赤ちゃんが泣いたら、<strong class="highlight">椅子に座ったまま</strong>、「大丈夫だよ」「ママ（パパ）はここにいるからね」と<strong class="highlight">優しく声をかけたり、必要であればベッドの柵越しに軽くトントンしたり</strong>します。（※基本的には<strong class="highlight">抱っこはしません</strong>）</li>
+                 <li>赤ちゃんが寝付くまで、静かにそばに座って見守ります。</li>
+                 <li><strong class="highlight">最初の3日間ほど</strong>は、同じ場所（ベッドの真横）で続けます。</li>
+                 <li>赤ちゃんが少し慣れてきたら（例：4日目から）、<strong class="highlight">椅子をベッドから少し離します</strong>（例：部屋の中間地点）。</li>
+                 <li>さらに3日間ほど続けたら、<strong class="highlight">また椅子をドアの近くへと移動させます</strong>。</li>
+                 <li>このように、<strong class="highlight">数日ごとに徐々にベッドから離れていき</strong>、最終的には部屋の外に出ることを目指します。</li>
              </ol>
+             <p><strong>メリット：</strong>赤ちゃんを一人にしないため、親の精神的な負担が比較的少ないと感じる方が多いです。赤ちゃんも安心感を得やすいでしょう。</p>
+             <p><strong>デメリット：</strong>効果が出るまでに時間がかかる（数週間以上かかることも）場合があります。親がそばにいることで、かえって赤ちゃんが興奮してしまったり、寝付くまで親が長時間拘束されたりすることもあります。</p>
              <div class="expert-comment">
-                この方法は、親の存在を感じさせながら徐々に距離を取るため、赤ちゃんへの負担が少ないと感じる方が多いです。ただし、親がそばにいることで逆に赤ちゃんが興奮してしまう場合や、寝付くまで時間がかかり親の負担が大きい場合もあります。
+                見守り型は、独立型よりも穏やかなアプローチですが、こちらも<strong class="highlight">親の忍耐と一貫性</strong>が求められます。特に、椅子を徐々に離していく過程で、赤ちゃんが不安を感じて泣きが強まることもあります。その際も、<strong class="highlight">元の場所に戻るのではなく、その場所で声かけや短い介入に留める</strong>ことがポイントです。
             </div>
         </div>
     </details>
     <details>
-        <summary>③ 寝落ちサポート型（ピックアップ/プットダウン法など）</summary>
+        <summary>③ 頻回介入型（ピックアップ/プットダウン法など）</summary>
         <div>
-            <p>就寝ルーティンの後、赤ちゃんを寝床に置きます。泣いたら抱き上げて安心させ、落ち着いたら再び寝床におろします。これを赤ちゃんが寝付くまで繰り返します。泣いたらすぐに対応するため、安心感を与えやすいですが、何度も抱き上げ・おろすを繰り返すため、時間がかかり、親子ともに疲れてしまうこともあります。</p>
+             <p><strong>考え方：</strong>赤ちゃんが泣いたらすぐに反応し、安心させてから再び寝床に戻す、というプロセスを繰り返す方法。</p>
+             <p><strong>手順例：</strong></p>
+             <ol>
+                 <li>就寝ルーティン後、眠いけれど起きている状態でベビーベッドへ置きます。</li>
+                 <li>赤ちゃんが泣き始めたら、<strong class="highlight">すぐに抱き上げて安心させます</strong>。（「大丈夫だよ」「眠いね」など優しい声かけと共に）</li>
+                 <li>赤ちゃんが<strong class="highlight">泣き止んで落ち着いたら（ただし、完全に寝入る前に）</strong>、再び「おやすみ」と言って<strong class="highlight">寝床におろします</strong>。</li>
+                 <li>もしまた泣き始めたら、同じように抱き上げて落ち着かせ、泣き止んだらおろす、という作業を<strong class="highlight">赤ちゃんが寝付くまで繰り返します</strong>。</li>
+             </ol>
+             <p><strong>メリット：</strong>泣いたらすぐに対応するため、赤ちゃんは見捨てられたと感じにくく、親の罪悪感も少ないかもしれません。</p>
+             <p><strong>デメリット：</strong>何度も抱き上げたりおろしたりを繰り返すため、<strong class="highlight">非常に時間がかかり、親の体力的・精神的な負担が大きい</strong>場合があります。赤ちゃんによっては、抱き上げられる刺激で逆に興奮してしまうこともあります。</p>
              <div class="expert-comment">
-                特に月齢が低い赤ちゃん（4-6ヶ月頃）や、泣き続けることに抵抗がある場合に試されることがあります。根気が必要な方法です。
+                この方法は、特に月齢が比較的低い赤ちゃん（例：4〜7ヶ月頃）や、泣き声に敏感な親御さんに試されることがあります。ただし、<strong class="highlight">根気と体力が必要</strong>な方法であることは覚悟しておきましょう。何度も繰り返すうちに、「寝床は安全な場所だ」と赤ちゃんが学習していくことを目指します。
             </div>
         </div>
     </details>
 
     <details>
-        <summary>1歳半以上のねんねトレーニング</summary>
+        <summary>【応用編】1歳半以上のねんねトレーニング</summary>
         <div>
-            <p>言葉の理解が進んでくるため、言い聞かせやルール作りが有効になります。</p>
+            <p>1歳半を過ぎると、言葉の理解が進み、自我もよりはっきりしてくるため、低月齢の赤ちゃんとは少し違ったアプローチが有効になることがあります。</p>
             <ul>
-                <li><strong>言い聞かせ：</strong>「〇〇ちゃん（くん）は大きいから、一人でねんねできるかな？ママ（パパ）はお隣の部屋にいるからね」など、ポジティブな言葉で励まします。</li>
-                <li><strong>「忘れたふり」作戦（フェーディング法）：</strong>「あ、お水飲むの忘れちゃった！すぐ戻るからね」など、短い理由をつけて部屋を一旦出て、すぐに戻ります。これを繰り返し、徐々に部屋を出ている時間を長くしていきます。</li>
-                <li><strong>ご褒美シールなど：</strong>一人で寝られたら朝にシールを貼るなど、簡単なご褒美でモチベーションを上げる方法もあります。（ただし、物に頼りすぎないように注意）</li>
+                <li><strong>言葉での説明と予告：</strong>「〇〇ちゃん（くん）はもう大きいから、一人でねんねできるかな？」「ママ（パパ）はお隣の部屋にいるから、何かあったら呼んでね」など、<strong class="highlight">理由を説明し、見通しを持たせる</strong>ように話します。寝る前のルーティンも、一緒に確認しながら進めると良いでしょう。</li>
+                <li><strong>「忘れたふり」作戦（フェーディング法）：</strong>部屋を出る際に、「あ、お茶飲むの忘れちゃった！1分で戻ってくるからね！」のように、<strong class="highlight">短い用事を理由にして一旦退室し、約束通りすぐに戻ります</strong>。これを繰り返し、「ママ（パパ）は必ず戻ってくる」という信頼感を築きながら、<strong class="highlight">徐々に部屋を出ている時間を長く</strong>していきます。</li>
+                <li><strong>ポジティブな強化（ご褒美作戦）：</strong>「朝まで一人で寝られたら、明日の朝、好きなシールを貼ろうね！」のように、<strong class="highlight">達成できそうな目標を設定し、できたら具体的に褒めたり、ささやかなご褒美（シール、スタンプなど）を与えたり</strong>するのも、モチベーション維持に役立つことがあります。ただし、物で釣るのではなく、あくまで「できた！」という達成感を共有することが大切です。</li>
+                <li><strong>選択肢を与える：</strong>「どのパジャマ着る？」「どの絵本を読む？」など、寝る前のルーティンの中で、<strong class="highlight">子ども自身に選択させる場面を作る</strong>ことで、寝ることへの抵抗感を和らげることがあります。</li>
             </ul>
              <div class="expert-comment">
-                この時期になると、子どもの意思もはっきりしてくるため、より根気と一貫性、そしてユーモアが必要になることもあります。親子で一緒に頑張る、という姿勢で臨みましょう。
+                この時期の子どもは、知恵もつき、交渉してくることもあるため（笑）、<strong class="highlight">親はより一貫した態度と、時にユーモアを持って対応する</strong>ことが求められます。「寝かしつけ」というより、「親子で協力して、気持ちよく寝るためのルールを作っていく」というスタンスで臨むと良いかもしれません。
             </div>
         </div>
     </details>
 
-    <h3>ねんねトレーニングの失敗ポイントと注意点</h3>
+    <h3>ネントレがうまくいかない…？ 失敗ポイントと注意点</h3>
+    <p>せっかく始めたネントレがうまくいかない、あるいは途中で挫折してしまうケースには、いくつかの共通点が見られます。以下の点をチェックしてみましょう。</p>
     <ul class="ng-list">
-        <li><strong>いきなり始めてしまう：</strong>赤ちゃんにも心の準備が必要です。数日前から「これからねんねの練習だよ」と優しく語りかけましょう。</li>
-        <li><strong>対応の基準が曖昧：</strong>「今日は泣いたらすぐ行くけど、明日は我慢」など、日によって対応が変わると赤ちゃんは混乱します。決めたルールを一貫して守ることが大切です。</li>
-        <li><strong>昼間の睡眠を極端に少なくする：</strong>疲れすぎると逆に寝つきが悪くなります（オーバード）。月齢に合った適切なお昼寝は必要です。</li>
-        <li><strong>寝室の環境が整っていない：</strong>光が漏れていたり、暑すぎたり寒すぎたり、肌触りが悪かったりすると、トレーニング以前の問題で眠れません。</li>
-        <li><strong>「ごめんね」と言ってしまう：</strong>親が罪悪感を持っていると、その不安は赤ちゃんに伝わります。「大丈夫だよ」「自分で寝られるよ」と自信を持って伝えましょう。</li>
-        <li><strong>家庭内での意見の不一致：</strong>パパとママ（あるいは他の家族）の方針が違うと、うまくいきません。始める前に必ず全員で話し合い、合意と協力体制を作りましょう。</li>
-        <li><strong>一度成功した後に、泣き声に負けて元に戻ってしまう：</strong>病気の後など、一時的に元の癖が戻ることもあります。そんな時も、また一貫性を持って対応すれば、赤ちゃんは思い出してくれます。諦めないことが大切です。</li>
-        <li><strong>日中の関わり不足：</strong>日中に十分なスキンシップや遊びの時間が取れず、赤ちゃんの心が満たされていないと、夜に不安を感じて寝付けないこともあります。</li>
+        <li><strong>準備不足でいきなりスタート：</strong>赤ちゃんにも心の準備が必要です。数日前から<strong class="highlight">「ねんねの練習」について優しく語りかけ</strong>、寝室の環境（暗さ、温度、安全）を再確認しましょう。</li>
+        <li><strong>対応に一貫性がない：</strong>「今日は頑張ったけど明日は無理」「パパはOKだけどママはNG」など、<strong class="highlight">日によって、あるいは人によって対応がバラバラだと、赤ちゃんは何を学習して良いか分からず混乱</strong>します。決めたルールは、家族全員で共有し、<strong class="highlight">一貫して守る</strong>ことが最も重要です。</li>
+        <li><strong>昼間の睡眠を削りすぎる：</strong>「昼寝させなければ夜寝るだろう」と考えるのは逆効果。月齢に合ったお昼寝は、日中の脳の休息や機嫌の安定に必要であり、<strong class="highlight">むしろ適切な昼寝が取れている方が、夜の寝つきも良くなる</strong>ことが多いです。疲れすぎ（オーバード）は、寝つきの悪さや夜泣きの大きな原因になります。</li>
+        <li><strong>寝室の環境が最適でない：</strong><strong class="highlight">光が漏れている、暑すぎる/寒すぎる、騒音が気になる、シーツがゴワゴワする</strong>など、睡眠環境に問題があると、どんなネントレも効果を発揮しにくいです。まずは環境を見直しましょう。</li>
+        <li><strong>親の罪悪感と言葉：「ごめんね」はNGワード？</strong> 赤ちゃんを泣かせてしまうことに罪悪感を抱くのは自然なことです。しかし、「ごめんね、かわいそうに…」といった言葉は、親の不安を赤ちゃんに伝えてしまいます。<strong class="highlight">「大丈夫だよ」「自分で寝られるよ、強いね」「ママ（パパ）は応援しているよ」</strong>など、ポジティブで自信を持った言葉かけを意識しましょう。</li>
+        <li><strong>家族の協力が得られない：</strong>ネントレに対する考え方が家族内で異なると、一貫した対応が取れず、失敗の大きな原因になります。<strong class="highlight">始める前に必ず全員で目的と方法を共有し、合意形成と協力体制</strong>を築きましょう。夜間の対応を交代するなど、負担を分担することも大切です。</li>
+        <li><strong>日中の関わりが不足している：</strong>日中に親とのスキンシップや遊びの時間が十分に取れず、<strong class="highlight">赤ちゃんの情緒的な欲求が満たされていない</strong>と、夜に不安を感じて親から離れられず、寝つきが悪くなることがあります。ネントレ成功のためにも、日中の質の高い関わりは不可欠です。</li>
+        <li><strong>一度成功した後の「後退」で諦める：</strong>病気、旅行、環境の変化、発達段階（歯が生える、新しい運動能力の獲得など）によって、<strong class="highlight">一時的に睡眠が乱れたり、元の癖がぶり返したりすることはよくあります</strong>。これは「失敗」ではありません。そんな時も、焦らず、また<strong class="highlight">基本に立ち返って一貫した対応を続ければ、赤ちゃんはまた自分で寝る力を思い出してくれます</strong>。ここで諦めないことが大切です。</li>
     </ul>
     <div class="expert-comment">
-        ねんねトレーニングは、決して<strong>赤ちゃんへの愛情不足ではありません</strong>。むしろ、親子ともに質の高い睡眠を取り、日中元気に笑顔で過ごすための<strong>前向きな取り組み</strong>です。焦らず、赤ちゃんのペースに合わせて、愛情を持ってサポートしてあげてください。
+        ねんねトレーニングは、<strong class="highlight">赤ちゃんを放置したり、愛情を否定したりするものでは決してありません</strong>。むしろ、赤ちゃんが自分の力で心地よく眠りにつくスキルを身につけ、<strong class="highlight">親子双方の睡眠の質を高め、日中をより元気に笑顔で過ごせるようにするための、前向きな「学び」のプロセス</strong>です。どの方法を選ぶにしても、<strong class="highlight">赤ちゃんの個性と発達段階を尊重し、愛情を持って、根気強く</strong>サポートしてあげてください。そして、もし「どうしても辛い」「うまくいかない」と感じたら、無理せず専門家に相談することも考えてみましょう。
     </div>
   </section>
 
   <section>
-    <h2 id="monthly-guide">【追加情報】月齢別ねんねガイド（目安）</h2>
-    <p>赤ちゃんの睡眠時間やパターンは月齢によって大きく変化します。<strong>睡眠は、休息だけでなく、記憶の整理や脳の発達にとっても非常に重要</strong>です。以下の表はあくまで一般的な目安です。<strong>個人差が大きい</strong>ことを念頭に置き、赤ちゃんの様子を見ながら調整してください。</p>
+    <h2 id="monthly-guide">【保存版】月齢別 ねんねガイド：睡眠時間・スケジュール・ポイント</h2>
+    <p>赤ちゃんの睡眠は、月齢と共に劇的に変化していきます。必要な睡眠時間、活動できる時間、お昼寝の回数などは、発達段階に応じて変わるため、その時期に合ったケアを心がけることが大切です。ここでは、月齢ごとの睡眠の特徴と、生活スケジュールの目安、そして関わり方のポイントを詳しく解説します。ただし、<strong class="highlight">すべての赤ちゃんがこの通りに進むわけではありません。あくまで一般的な目安として参考にし、目の前の赤ちゃんの個性とペースを最優先してください。</strong></p>
+    <p><strong>睡眠の重要な役割：</strong>赤ちゃんにとって睡眠は、単に体を休めるだけでなく、<strong class="highlight">脳が急速に発達し、日中に学んだことを整理・記憶し、感情をコントロールする力を養うための、非常に重要な時間</strong>です。質の高い睡眠は、健やかな心身の成長に不可欠なのです。</p>
 
-    <h3>眠いサインを見逃さない！</h3>
-    <p>赤ちゃんは眠くなるとサインを出します。これを見逃さずに寝かしつけを始めるのが、スムーズな入眠のコツです。疲れすぎると、寝ぐずりや癇癪につながりやすくなります。</p>
+    <h3>まずは「眠いサイン」を見逃さない練習から！</h3>
+    <p>赤ちゃんがスムーズに寝付くためには、「眠いけれど、まだ疲れすぎていない」という<strong class="highlight">絶妙なタイミング</strong>で寝かしつけを始めることが重要です。そのためには、赤ちゃんが出す「眠いサイン」に気づけるようになることが第一歩。サインは大きく分けて３段階あります。</p>
     <ul>
-        <li><strong>初期サイン：</strong>宙を見つめる、動きが少なくなる、顔をこする、あくびをする</li>
-        <li><strong>中期サイン：</strong>ぐずる、奇声をあげる、耳を引っ張る、物にぶつかる、おもちゃに興味がなくなる</li>
-        <li><strong>後期サイン（疲れすぎ）：</strong>激しく泣く、反り返る、簡単には寝付けない</li>
+        <li><strong>【初期サイン】（そろそろ眠いかも？の合図）</strong>
+            <ul><li>視線が一点を見つめるようになる（宙を見る）</li><li>動きがゆっくりになる、静かになる</li><li>眉毛のあたりや顔をこする</li><li>あくびをする</li></ul>
+            <span style="color:#2ecc71; font-weight:bold;">→ このサインが出始めたら、寝かしつけの準備を始めるベストタイミング！</span>
+        </li>
+        <li><strong>【中期サイン】（眠くてちょっと限界かも…の合図）</strong>
+            <ul><li>ぐずり始める、不機嫌になる</li><li>奇声を発する、うなる</li><li>耳を引っ張る、髪の毛を引っ張る</li><li>物にぶつかったり、ふらついたりする</li><li>おもちゃや遊びに興味を示さなくなる</li></ul>
+            <span style="color:#f39c12; font-weight:bold;">→ ちょっと遅いけど、まだ間に合う！すぐに静かな環境へ連れて行き、寝かしつけを開始！</span>
+        </li>
+        <li><strong>【後期サイン】（疲れすぎちゃった！の合図 - オーバード状態）</strong>
+            <ul><li>火がついたように激しく泣く</li><li>体を反り返らせて嫌がる</li><li>何をしても泣き止まない、簡単には寝付けない</li><li>目がランランとして逆に興奮しているように見えることも</li></ul>
+            <span style="color:#e74c3c; font-weight:bold;">→ 寝かしつけが困難になるサイン。こうなる前に寝かせるのが理想。この状態になったら、まずは落ち着かせることを優先。</span>
+        </li>
     </ul>
     <div class="expert-comment">
-        できれば<strong>初期〜中期のサイン</strong>で寝かしつけを始められるのが理想です。後期サイン（疲れすぎ）までいくと、寝つくまでに時間がかかったり、夜中に何度も起きたりする原因になります。「活動時間」の目安も参考に、眠くなるタイミングを予測しましょう。
+        特に低月齢のうちはサインが分かりにくいこともありますが、毎日観察しているうちに、「うちの子は眠くなるとこうなるな」というパターンが見えてきます。<strong class="highlight">後期サイン（疲れすぎ）までいってしまうと、寝つきが悪くなるだけでなく、夜中に何度も起きたり、早朝に起きてしまったりする原因</strong>にもなります。できるだけ<strong class="highlight">初期〜中期のサイン</strong>でキャッチできるよう、赤ちゃんの様子を注意深く見てあげましょう。
     </div>
 
-    <h3>活動時間（起きていられる時間）の目安</h3>
-    <p>赤ちゃんが疲れすぎずに起きていられる時間には、月齢ごとにおおよその目安があります。次の睡眠までの時間の参考にしてください。</p>
+    <h3>「活動時間」を知って、次のねんねタイミングを予測！</h3>
+    <p>赤ちゃんが<strong class="highlight">ご機嫌に起きていられる時間（活動時間 / Awake Time / Wake Window）</strong>には、月齢ごとにおおよその目安があります。この時間を知っておくと、「そろそろ眠くなる頃かな？」と予測しやすくなり、眠いサインを見逃しにくくなります。活動時間には、授乳やおむつ替え、遊びの時間などが含まれます。</p>
     <ul>
-        <li><strong>新生児〜2ヶ月：</strong>45分〜1時間半</li>
-        <li><strong>3〜4ヶ月：</strong>1時間半〜2時間</li>
-        <li><strong>5〜6ヶ月：</strong>2時間〜3時間</li>
-        <li><strong>7〜8ヶ月：</strong>2時間半〜3時間半</li>
-        <li><strong>9〜10ヶ月：</strong>3時間〜4時間</li>
-        <li><strong>11ヶ月〜15ヶ月：</strong>3時間半〜5時間</li>
-        <li><strong>1歳半〜3歳：</strong>5時間〜6時間</li>
+        <li><strong>新生児〜2ヶ月：</strong>約45分〜1時間半</li>
+        <li><strong>3〜4ヶ月：</strong>約1時間半〜2時間</li>
+        <li><strong>5〜6ヶ月：</strong>約2時間〜3時間</li>
+        <li><strong>7〜8ヶ月：</strong>約2時間半〜3時間半</li>
+        <li><strong>9〜10ヶ月：</strong>約3時間〜4時間</li>
+        <li><strong>11ヶ月〜15ヶ月：</strong>約3時間半〜5時間（昼寝1回への移行期）</li>
+        <li><strong>1歳半〜3歳：</strong>約5時間〜6時間（昼寝は1回）</li>
     </ul>
+     <div class="expert-comment">
+        活動時間はあくまで目安であり、その日の体調や活動内容によっても変動します。<strong class="highlight">午前中よりも午後の方が少し長く起きていられる</strong>傾向もあります。時間だけにとらわれず、<strong class="highlight">必ず赤ちゃんの眠いサインと合わせて</strong>、次の睡眠のタイミングを判断するようにしましょう。「活動時間の終わり際＝眠いサインが出始める頃」と考えると分かりやすいかもしれません。
+    </div>
 
-    <h3>月齢別 睡眠スケジュール（例）</h3>
+    <h3>【月齢別】睡眠時間・スケジュール例・ケアのポイント</h3>
     <table>
       <thead>
         <tr>
@@ -661,131 +877,206 @@
           <th>夜間の睡眠 (目安)</th>
           <th>昼寝 (目安)</th>
           <th>活動時間 (目安)</th>
-          <th>スケジュール例 & ポイント</th>
+          <th>生活スケジュール例 & ケアのポイント</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>0-3ヶ月</strong></td>
-          <td>14-17時間</td>
-          <td>8-10時間 (途切れ途切れ)</td>
-          <td>合計 5-7時間 (3-5回)</td>
-          <td>45分-1.5時間</td>
+          <td><strong>0-3ヶ月</strong><br>(新生児期〜)</td>
+          <td><strong class="highlight">14-17時間</strong><br>(かなり個人差大)</td>
+          <td>8-10時間<br>(ただし<strong class="highlight">細切れ</strong>)</td>
+          <td>合計 5-7時間<br>(回数は不規則、<strong class="highlight">3-5回以上</strong>)</td>
+          <td>45分-1.5時間<br>(非常に短い)</td>
           <td>
-            <strong>例:</strong> オンデマンド（欲しがる時に授乳・睡眠）<br>
-            <strong>ポイント:</strong>
+            <strong>スケジュール例:</strong> 基本的に<strong class="highlight">オンデマンド</strong>（赤ちゃん主導）<br>
             <ul>
-                <li>まだ昼夜の区別が曖昧。睡眠サイクルが短く（45-60分）、頻繁に起きるのが普通。</li>
-                <li>授乳は基本的に<strong>赤ちゃんが欲しがるだけ</strong>与えます。ただし、体重増加が心配な場合や、極端に飲みたがらない場合は、2〜3時間おきに促すこともありますが、<strong>体重増加が順調であれば無理強いする必要はありません</strong>。医師や助産師に相談しましょう。</li>
-                <li>安全な睡眠環境を最優先に。<strong>この時期のネントレは推奨されない。</strong></li>
+                <li><strong>特徴:</strong>
+                    <ul>
+                        <li>昼夜の区別がほとんどない。「寝る→飲む→起きる」の繰り返し。</li>
+                        <li>睡眠サイクルが約45-60分と短く、浅い睡眠が多い。頻繁に起きるのは正常。</li>
+                        <li>空腹、おむつの不快、ゲップが出ない、暑い/寒いなどで泣くことが多い。</li>
+                    </ul>
+                </li>
+                <li><strong>ケアのポイント:</strong>
+                    <ul>
+                        <li><strong class="highlight">安全な睡眠環境の確保が最優先！</strong>（SIDS予防策の徹底）</li>
+                        <li>授乳は<strong class="highlight">赤ちゃんが欲しがるタイミングと量</strong>を基本に。ただし、体重増加が心配な場合や、極端に寝てばかりいる場合は、2〜3時間おきに起こして授乳を促すことも。（医師や助産師に相談）</li>
+                        <li>スキンシップを大切に。抱っこやおくるみで安心感を。</li>
+                        <li><strong>この時期のネントレは不要</strong>。赤ちゃんの要求に応え、信頼関係を築く時期。</li>
+                        <li>親も細切れ睡眠で辛い時期。可能な限り休息を取り、周囲のサポートを得て。</li>
+                    </ul>
+                </li>
             </ul>
           </td>
         </tr>
         <tr>
-          <td><strong>4-6ヶ月</strong></td>
-          <td>14-16時間</td>
-          <td>10-11時間</td>
-          <td>合計 3-4時間 (2-3回)</td>
+          <td><strong>4-6ヶ月</strong><br>(リズム形成期)</td>
+          <td><strong class="highlight">14-16時間</strong></td>
+          <td>10-11時間<br>(まとまって寝る時間が増える子も)</td>
+          <td>合計 3-4時間<br>(午前・午後・夕方など<strong class="highlight">2-3回</strong>)</td>
           <td>1.5-2.5時間</td>
           <td>
-            <strong>例:</strong> 7時起床→8:30-10:00 朝寝→12:00-14:00 昼寝→16:00-16:30 夕寝→19:00 就寝<br>
-            <strong>ポイント:</strong>
+            <strong>スケジュール例 (3回昼寝):</strong> 7時起床 → 8:30-10:00 朝寝 → 12:00-13:30 昼寝 → 15:30-16:00 夕寝 → 19:00 就寝<br>
             <ul>
-                <li>昼夜の区別がつき始め、生活リズムを整えやすい時期。</li>
-                <li>夜通し寝る子も出てくるが、まだ夜間授乳が必要な子も多い。（離乳食の進み具合とも関連）</li>
-                <li><strong>ネントレを開始するならこの時期以降。</strong>夕寝がなくなる子も。</li>
+                <li><strong>特徴:</strong>
+                    <ul>
+                        <li>体内時計が発達し始め、<strong class="highlight">昼夜の区別がつきやすく</strong>なる。生活リズムを整え始めるのに良い時期。</li>
+                        <li>睡眠サイクルが少し長くなり、夜間に<strong class="highlight">4〜6時間程度まとまって寝る</strong>子も出てくる。</li>
+                        <li>寝返りを始める子が多く、動きが活発になる。一時的に睡眠が不安定になることも（睡眠退行）。</li>
+                        <li>離乳食を開始する時期でもある。</li>
+                    </ul>
+                </li>
+                <li><strong>ケアのポイント:</strong>
+                    <ul>
+                        <li><strong class="highlight">起床・就寝時間を一定に</strong>し、生活リズムの土台を作ることを意識する。</li>
+                        <li><strong class="highlight">就寝ルーティン</strong>を開始・定着させるのに適した時期。</li>
+                        <li>夜間授乳はまだ必要な子が多いが、空腹以外の理由で頻繁に起きる場合は、<strong class="highlight">ネントレを検討し始めても良い時期</strong>。</li>
+                        <li>夕寝は就寝時刻に影響しないよう、短め（30分以内）にし、遅くとも就寝3時間前には起こす。夕寝がなくなる子も出てくる。</li>
+                        <li>寝返りによる窒息事故に注意。睡眠環境の安全性を再確認。</li>
+                    </ul>
+                </li>
             </ul>
           </td>
         </tr>
          <tr>
-          <td><strong>7-11ヶ月</strong></td>
-          <td>13-15時間</td>
+          <td><strong>7-11ヶ月</strong><br>(活動期)</td>
+          <td><strong class="highlight">13-15時間</strong></td>
           <td>10-12時間</td>
-          <td>合計 2.5-3.5時間 (2回)</td>
+          <td>合計 2.5-3.5時間<br>(<strong class="highlight">午前・午後の2回</strong>が定着)</td>
           <td>2.5-3.5時間</td>
           <td>
-            <strong>例:</strong> 7時起床→9:30-11:00 朝寝→14:00-15:30 昼寝→19:30 就寝<br>
-            <strong>ポイント:</strong>
-            <ul>
-                <li>多くの赤ちゃんが昼寝は午前と午後の2回に。</li>
-                <li>人見知りや後追い、つかまり立ちなど発達に伴い、一時的に寝つきが悪くなることも（睡眠退行）。</li>
-                <li>離乳食が2回、3回と進む時期。食事の時間が睡眠時間に影響することも。</li>
+            <strong>スケジュール例 (2回昼寝):</strong> 7時起床 → 9:30-11:00 朝寝 → 14:00-15:30 昼寝 → 19:30 就寝<br>
+             <ul>
+                <li><strong>特徴:</strong>
+                    <ul>
+                        <li>ハイハイ、つかまり立ち、伝い歩きなど、<strong class="highlight">運動能力が飛躍的に発達</strong>。日中の活動量が増える。</li>
+                        <li><strong class="highlight">人見知りや後追い（分離不安）</strong>が始まり、親から離れることを嫌がることが増え、寝かしつけに時間がかかったり、夜泣きが増えたりすることも（発達に伴う一時的な睡眠退行）。</li>
+                        <li>昼寝は午前と午後の2回に定着する子が多い。</li>
+                        <li>離乳食が2回食→3回食へと進む。</li>
+                    </ul>
+                </li>
+                <li><strong>ケアのポイント:</strong>
+                    <ul>
+                        <li>日中に<strong class="highlight">体を動かす遊び</strong>を十分に取り入れ、エネルギーを発散させる。</li>
+                        <li>分離不安に対しては、日中に<strong class="highlight">「いないいないばあ」遊びや「待つ練習」</strong>を取り入れたり、寝る前に十分なスキンシップで安心感を与えたりする。</li>
+                        <li>一貫した就寝ルーティンを続け、安心感を与える。</li>
+                        <li>夜泣きが増えても、一時的なものと捉え、根気強く対応する。必要であればネントレの見直しや再開も。</li>
+                        <li>食事の時間が睡眠に影響しないよう、就寝前の食事は避けるなど配慮する。</li>
+                    </ul>
+                </li>
             </ul>
           </td>
         </tr>
          <tr>
-          <td><strong>12-18ヶ月</strong></td>
-          <td>13-15時間</td>
+          <td><strong>12-18ヶ月</strong><br>(移行期)</td>
+          <td><strong class="highlight">13-15時間</strong></td>
           <td>11-12時間</td>
-          <td>合計 2-3時間 (1-2回)</td>
-          <td>3.5-5時間</td>
+          <td>合計 2-3時間<br>(<strong class="highlight">昼寝が2回→1回へ移行</strong>)</td>
+          <td>3.5-5時間<br>(変動が大きい時期)</td>
           <td>
-            <strong>例（昼寝1回）:</strong> 7時起床→12:30-14:30 昼寝→20:00 就寝<br>
-            <strong>ポイント:</strong>
-            <ul>
-                <li>昼寝が1回になる子が増える移行期。午前寝をなくし午後の昼寝を長めに取るように調整。</li>
-                <li>自我が芽生え、寝るのを嫌がることも。一貫したルーティンがより重要に。</li>
-                <li>卒乳・断乳を考える時期でもあり、睡眠パターンに変化が出ることも。</li>
+            <strong>スケジュール例 (昼寝1回):</strong> 7時起床 → 12:30-14:30 昼寝 → 20:00 就寝<br>
+             <ul>
+                <li><strong>特徴:</strong>
+                    <ul>
+                        <li>歩き始める子が増え、さらに活動的に。</li>
+                        <li><strong class="highlight">昼寝が午前・午後の2回から、午後の1回へと移行する</strong>子が多い時期。移行期は日によって1回だったり2回だったり、不安定になりやすい。</li>
+                        <li>自我が芽生え、「イヤ！」という自己主張が出始める。寝るのを嫌がったり、寝かしつけに抵抗したりすることも。</li>
+                        <li>卒乳・断乳を考える家庭も多く、それに伴い睡眠パターンが変わることも。</li>
+                    </ul>
+                </li>
+                <li><strong>ケアのポイント:</strong>
+                    <ul>
+                        <li><strong class="highlight">昼寝1回への移行は慎重に</strong>。午前中に眠そうなら無理に起こさず短い朝寝をさせたり、昼寝の時間を早めたり、臨機応変に対応。完全に1回にする場合は、就寝時間を少し早めるなど調整が必要。</li>
+                        <li>「イヤ！」に対しては、頭ごなしに叱るのではなく、気持ちを受け止めつつ、<strong class="highlight">寝る前のルーティンの中で選択肢を与える</strong>（「どっちのパジャマにする？」など）ことで、協力的な姿勢を引き出す工夫も。</li>
+                        <li>一貫したルールとルーティンは、この時期こそ重要になる。</li>
+                        <li>卒乳・断乳を行う場合は、授乳以外の寝かしつけ方法（トントン、絵本など）を事前に確立しておくとスムーズ。</li>
+                    </ul>
+                </li>
             </ul>
           </td>
         </tr>
          <tr>
-          <td><strong>1.5歳-3歳</strong></td>
-          <td>12-14時間</td>
+          <td><strong>1.5歳-3歳</strong><br>(幼児期前半)</td>
+          <td><strong class="highlight">12-14時間</strong></td>
           <td>10-12時間</td>
-          <td>合計 1.5-2.5時間 (1回)</td>
+          <td>合計 1.5-2.5時間<br>(<strong class="highlight">午後の1回</strong>)</td>
           <td>5-6時間</td>
           <td>
-            <strong>例:</strong> 7時起床→13:00-15:00 昼寝→20:30 就寝<br>
-            <strong>ポイント:</strong>
+            <strong>例:</strong> 7時起床 → 13:00-15:00 昼寝 → 20:30 就寝<br>
             <ul>
-                <li>昼寝は午後の1回で定着。</li>
-                <li>言葉でのコミュニケーションが取れるようになり、寝る前のルールなどを理解しやすくなる。</li>
-                <li>イヤイヤ期と重なり、寝かしつけに工夫が必要な場合も。寝る前の要求が増えることも。</li>
+                <li><strong>特徴:</strong>
+                    <ul>
+                        <li><strong class="highlight">昼寝は午後の1回で定着</strong>する。</li>
+                        <li>言葉でのコミュニケーション能力が向上し、会話が成り立つようになる。</li>
+                        <li><strong class="highlight">第一次反抗期（イヤイヤ期）</strong>のピークと重なることが多く、寝ることへの抵抗が強まる場合がある。</li>
+                        <li>想像力が豊かになり、暗闇や「おばけ」などを怖がる子も出てくる。</li>
+                    </ul>
+                </li>
+                <li><strong>ケアのポイント:</strong>
+                    <ul>
+                        <li><strong class="highlight">言葉で説明し、ルールを伝える</strong>ことが有効になる。「時計の長い針が〇になったらねんねだよ」など、視覚的な合図を使うのも良い。</li>
+                        <li>イヤイヤ期の対応としては、気持ちを受け止め共感しつつ、<strong class="highlight">寝る前の選択肢や、できたら褒める</strong>などで、ポジティブな雰囲気を作る。</li>
+                        <li>暗闇を怖がる場合は、完全に真っ暗にするのが難しければ、<strong class="highlight">最小限の安心できる光（プロジェクターライトなど）</strong>を一時的に使うことも検討。ただし、光に頼りすぎないように注意。怖くない理由を説明したり、お守りになるような言葉かけも有効。</li>
+                        <li>昼寝が長すぎたり、遅い時間になったりすると夜の寝つきに影響するので、<strong class="highlight">昼寝の時間を調整</strong>する（例：長くても2時間まで、15時までには起こすなど）。</li>
+                    </ul>
+                </li>
             </ul>
           </td>
         </tr>
         <tr>
-          <td><strong>3歳-5歳</strong></td>
-          <td>11-13時間</td>
+          <td><strong>3歳-5歳</strong><br>(幼児期後半)</td>
+          <td><strong class="highlight">11-13時間</strong></td>
           <td>10-12時間</td>
-          <td>昼寝なし or 短時間 (0-1.5時間)</td>
+          <td><strong class="highlight">昼寝なし or 短時間</strong><br>(0-1.5時間)</td>
           <td>6時間以上</td>
           <td>
-            <strong>例:</strong> 7時起床→20:00-20:30 就寝<br>
-            <strong>ポイント:</strong>
-            <ul>
-                <li>昼寝がなくなる子が増える。昼寝をする場合は、夜の睡眠に影響しないよう、早めの時間に短く（1時間以内など）。</li>
-                <li>就寝前の静かな時間を大切に。想像力が豊かになり、暗闇を怖がる子も出てくる時期。</li>
+            <strong>例:</strong> 7時起床 → (13:00-14:00 昼寝 ※する子の場合) → 20:00-20:30 就寝<br>
+             <ul>
+                <li><strong>特徴:</strong>
+                    <ul>
+                        <li><strong class="highlight">昼寝をしなくなる子が増える</strong>時期。体力がつき、日中長く起きていられるようになる。</li>
+                        <li>集団生活（幼稚園・保育園）を始める子が多く、日中の刺激や疲れ具合が睡眠に影響する。</li>
+                        <li>夜驚症（夜中に突然叫んで起きるが、本人は覚えていない）や悪夢を見る子もいる。</li>
+                    </ul>
+                </li>
+                <li><strong>ケアのポイント:</strong>
+                    <ul>
+                        <li>昼寝をしなくなった場合、<strong class="highlight">夕方に疲れすぎて機嫌が悪くならないか</strong>注意し、必要であれば少し早めに就寝させる。</li>
+                        <li>まだ昼寝が必要な子の場合、<strong class="highlight">夜の睡眠に影響しないように、早めの時間に短く</strong>（例：1時間以内）とどめる。週末の寝だめなどもリズムを崩す原因になるので注意。</li>
+                        <li>就寝前の<strong class="highlight">静かでリラックスできる時間</strong>（絵本、静かなおしゃべりなど）を大切にする。日中の出来事を話したり、安心感を与えるコミュニケーションを。</li>
+                        <li>夜驚症は脳の未熟さによるもので、通常は成長とともになくなる。無理に起こさず、安全を見守る。悪夢を見た場合は、安心させる言葉をかけ、慰めてあげる。</li>
+                    </ul>
+                </li>
             </ul>
           </td>
         </tr>
       </tbody>
     </table>
     <div class="expert-comment">
-        夜なかなか寝ない、夜泣きがひどい場合、「昼寝をしすぎている/タイミングが悪い」可能性と「逆に睡眠が足りていない（疲れすぎている）」可能性の両方が考えられます。<strong>トータルの睡眠時間と活動時間の目安</strong>を参考に、赤ちゃんの様子を見ながら調整してみてください。<br>
-        <strong>睡眠記録をつける</strong>と、「こういう日はよく寝る」「ママのこの行動の後は寝ぐずりが多いかも？」など、パターンや原因のヒントが見つかることがあります。<br>
-        <strong>日中の過ごし方</strong>も夜の睡眠に影響します。適度な運動（外遊びなど）、十分なスキンシップ、知的好奇心を満たす遊び（「やってみたい！」に応える）などが、夜の落ち着いた眠りにつながります。<br>
-        <strong>お昼寝の場所</strong>について、「明るい場所で」という説もありますが、体内時計のリズムをつけるには夜は暗く、昼は明るくが基本です。しかし、お昼寝も暗い方が深く眠れる赤ちゃんも多いので、これも赤ちゃんの様子に合わせて調整しましょう。ただし、夜の睡眠と混同しないよう、真っ暗にしすぎない、時間を区切るなどの工夫は有効です。
+        「夜なかなか寝ない」「夜泣きがひどい」…その原因は、<strong class="highlight">「昼寝のしすぎ/タイミングのずれ」</strong>かもしれませんし、逆に<strong class="highlight">「日中の刺激が強すぎた/睡眠が足りていない（疲れすぎ）」</strong>のかもしれません。どちらの可能性も考えられます。<br>
+        まずは、<strong class="highlight">数日間、睡眠記録（寝た時間、起きた時間、昼寝の時間と長さ、寝つくまでの様子、夜中に起きた回数や様子など）をつけてみる</strong>ことをお勧めします。記録することで、赤ちゃんの睡眠パターン、総睡眠時間、活動時間などが見えてきて、「活動時間が長すぎるかも」「夕寝が遅いのが原因かな？」といった原因究明や対策のヒントが見つかることがあります。<br>
+        また、忘れてはならないのが、<strong class="highlight">日中の過ごし方が夜の睡眠に大きく影響する</strong>ということです。<strong>適度な運動（特に午前中の外遊びは体内時計にも良い影響）、五感を使う遊び、そして何より親とのポジティブなコミュニケーションとスキンシップ</strong>。これらが赤ちゃんの心を満たし、体を心地よく疲れさせることが、夜の安眠につながります。「早く寝かせたい」なら、むしろ日中の関わりを充実させることを意識してみてください。<br>
+        <strong>お昼寝の場所</strong>について、「夜の寝室とは別の、明るいリビングで」という考え方もありますが、睡眠の質を考えると、<strong class="highlight">お昼寝もある程度暗く静かな環境の方が深く眠れる</strong>赤ちゃんが多いです。ただし、夜の睡眠と混同しないよう、<strong class="highlight">真っ暗にしすぎず（少し光が入る程度）、時間を区切る</strong>（例：アラームを使う）、起きたらすぐに明るい場所へ連れて行く、などの工夫は有効です。これも赤ちゃんのタイプに合わせて調整しましょう。
     </div>
   </section>
 
   <div class="support-message">
-      <h3>💖 頑張るパパ・ママへ</h3>
-      <p>毎日お疲れ様です。赤ちゃんの睡眠に悩むのは、あなただけではありません。多くの親が通る道です。</p>
+      <h3>💖 毎日頑張っているパパ・ママへ、心からのエール</h3>
+      <p>赤ちゃんの睡眠と向き合う日々、本当にお疲れ様です。寝不足で辛い時、終わりが見えなくて不安になる時、ありますよね。でも、あなたは一人ではありません。多くの親が同じように悩み、試行錯誤しています。</p>
       <ul>
-          <li><strong>完璧じゃなくていい：</strong>「いいママ」「いいパパ」になろうと頑張りすぎないで。「正しい育て方」は一つではありません。</li>
-          <li><strong>無理はしない：</strong>疲れているときは、無理にあやし続けなくても大丈夫。赤ちゃんが安全な場所にいれば、少し離れて深呼吸する時間も必要です。</li>
-          <li><strong>頼ることを恐れない：</strong>パートナー、家族、友人、地域のサポート（保健センター、子育て支援センターなど）を頼りましょう。</li>
-          <li><strong>上手に手抜きをする：</strong>家事や他のことは、少し手を抜いても大丈夫。今は赤ちゃんとご自身の心と体を休めることを優先しましょう。（スリングやおんぶ紐なども活用して、負担を減らす工夫も）</li>
-          <li><strong>自分の時間も大切に：</strong>ほんの少しでも、自分の好きなことやリラックスできる時間を見つけてくださいね。</li>
+          <li><strong>あなたは十分頑張っています：</strong>「完璧な親」なんていません。「良いママ」「良いパパ」であろうと頑張りすぎるあまり、自分を追い詰めていませんか？ 赤ちゃんが安心して過ごせていれば、それで十分。 <strong class="highlight">「正しい育て方」は一つではない</strong>のですから。</li>
+          <li><strong>無理は禁物、休むことも仕事：</strong>疲れている時、イライラしてしまう時、<strong class="highlight">毎回100%で赤ちゃんに応えられなくても大丈夫</strong>。赤ちゃんが安全な場所にいることを確認したら、数分でも良いので深呼吸する、温かい飲み物を飲むなど、<strong class="highlight">自分をケアする時間</strong>を取りましょう。</li>
+          <li><strong>「助けて」と言える勇気：</strong>パートナー、両親、友人、地域のサポート（保健師、子育て支援、一時保育、ファミリーサポートなど）…<strong class="highlight">頼れる人やサービスがあるなら、遠慮なく頼りましょう</strong>。一人で抱え込まないでください。</li>
+          <li><strong>家事は手抜きでOK！：</strong>今は、赤ちゃんとご自身の心身の健康が最優先。<strong class="highlight">家事が完璧でなくても、食事が簡単なものでも大丈夫</strong>。便利な家電やサービス（ネットスーパー、家事代行など）を上手に活用するのも賢い選択です。</li>
+          <li><strong>自分時間でリフレッシュ：</strong>たとえ5分でも、<strong class="highlight">自分の好きなことやリラックスできること</strong>（好きな音楽を聴く、本を読む、ストレッチするなど）に時間を使えると、心の余裕が生まれます。パートナーと協力して、交代で短い自由時間を作る工夫も。</li>
+          <li><strong>便利な育児グッズも味方に：</strong><strong class="highlight">スリングや抱っこ紐、おんぶ紐</strong>などを活用すれば、赤ちゃんは安心感を得られ、親は両手が空いて少し楽になることもあります。自分に合ったものを見つけてみましょう。（ただし、使用時は赤ちゃんの姿勢や呼吸に注意し、安全に配慮してください）</li>
       </ul>
-      <p>このガイドが、少しでもあなたの助けになれば幸いです。</p>
+      <p>赤ちゃんの睡眠は、必ず少しずつ変化していきます。今の状況が永遠に続くわけではありません。このガイドが、暗いトンネルの中で少しでも明るい方向を示す、小さな光となれば嬉しいです。</p>
   </div>
 
 
   <footer class="disclaimer">
-      <p><strong>免責事項：</strong> この情報は一般的な知識を提供するものであり、個々の赤ちゃんに対する医学的なアドバイスに代わるものではありません。赤ちゃんの睡眠に関して心配な点がある場合は、必ず小児科医や乳幼児睡眠の専門家にご相談ください。特に、安全な睡眠環境（SIDS予防）に関する情報は、常に最新のガイドラインを確認するようにしてください。</p>
+      <p><strong>免責事項：</strong> この情報は、一般的な知識や考え方を提供するものであり、個々の赤ちゃんやご家族の状況に対する医学的な診断や治療、具体的な指示に代わるものではありません。赤ちゃんの睡眠や健康に関して深刻な心配や疑問がある場合は、必ずかかりつけの小児科医、睡眠専門医、または地域の保健師等の専門家にご相談ください。特に、安全な睡眠環境（SIDS予防）に関する推奨事項については、常に最新の公的機関（厚生労働省、米国小児科学会など）のガイドラインを確認し、それに従ってください。</p>
   </footer>
 
 </div>
