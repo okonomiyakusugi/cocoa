@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>仮定法とは？</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Zen+Maru+Gothic:wght@400;500;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #e8a3b5;
+    --pink-light: #f6d6df;
+    --yellow: #ffe94d;
+    --highlight: #fff27a;
+    --red: #e0502d;
+    --blue: #2a8bc9;
+    --ink: #222;
+    --gray: #888;
+    --paper: #fff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #e9e6e1;
+    font-family: "Zen Maru Gothic", sans-serif;
+    color: var(--ink);
+    padding: 24px 16px;
+  }
+
+  /* ===== ページ ===== */
+  .page {
+    position: relative;
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--paper);
+    padding: 48px 56px 40px 80px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.15);
+  }
+  /* 左端の波線の帯 */
+  .page::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 22px;
+    background:
+      radial-gradient(circle at 22px 9px, var(--paper) 7px, transparent 7.5px) 0 0 / 22px 18px repeat-y,
+      var(--pink);
+  }
+
+  /* ===== 見出し ===== */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 3px solid var(--pink-light);
+    padding-bottom: 6px;
+  }
+  .lesson-label {
+    font-family: "Kalam", sans-serif;
+    letter-spacing: .08em;
+    color: #555;
+    font-size: 15px;
+  }
+  .badge {
+    position: relative;
+    width: 92px; height: 92px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    font-family: "Kalam", sans-serif;
+    font-size: 40px;
+    color: #333;
+  }
+  .badge svg { position: absolute; inset: 0; }
+  .badge span { position: relative; }
+  .title {
+    font-family: "Klee One", serif;
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: .06em;
+  }
+  .subtitle {
+    text-align: right;
+    font-size: 12px;
+    color: #666;
+    margin-top: 6px;
+    letter-spacing: .05em;
+  }
+  .subtitle i { font-family: Georgia, serif; }
+
+  /* ===== 本文 ===== */
+  .body p {
+    font-size: 16.5px;
+    line-height: 2;
+    margin: 26px 0;
+    text-indent: 1em;
+    letter-spacing: .03em;
+  }
+  .hl {
+    font-weight: 700;
+    background: linear-gradient(transparent 55%, var(--highlight) 55%);
+  }
+
+  /* ===== 図のボックス ===== */
+  .box {
+    border: 3px solid var(--pink-light);
+    border-radius: 6px;
+    padding: 22px 28px;
+    margin: 24px 0;
+    font-family: "Klee One", serif;
+  }
+  .hand-en {
+    font-family: "Kalam", cursive;
+    font-weight: 700;
+    color: #222;
+  }
+  .note-blue { color: var(--blue); font-size: 15px; }
+  .red-u {
+    color: var(--red);
+    border-bottom: 3px solid var(--red);
+    padding-bottom: 1px;
+  }
+
+  /* 吹き出し部分 */
+  .wish {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: end;
+  }
+  .bubble {
+    grid-column: 1 / -1;
+    justify-self: start;
+    position: relative;
+    border: 2.5px solid #222;
+    border-radius: 50px;
+    padding: 10px 36px;
+    font-size: 40px;
+    margin-left: 70px;
+    background: #fdf1f3;
+  }
+  .bubble::after {
+    content: "";
+    position: absolute;
+    right: 28px; bottom: -22px;
+    width: 26px; height: 26px;
+    background: #fdf1f3;
+    border-right: 2.5px solid #222;
+    border-bottom: 2.5px solid #222;
+    transform: skewY(40deg) rotate(10deg);
+  }
+  .bubble .arrow-note {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-30%);
+    bottom: -42px;
+    font-family: "Klee One", serif;
+    font-size: 14px;
+    color: var(--blue);
+    white-space: nowrap;
+  }
+  .bubble .arrow-note::before { content: "↑ "; }
+  .wish .caption {
+    padding: 40px 0 0 80px;
+    font-size: 17px;
+    line-height: 2;
+  }
+  .wish svg { width: 100%; height: auto; }
+
+  /* 比較ボックス */
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+  }
+  .compare::before {
+    content: "";
+    position: absolute;
+    left: 50%; top: 10px; bottom: 40px;
+    border-left: 3px dashed var(--blue);
+  }
+  .col { padding: 0 18px; }
+  .col h3 {
+    font-family: "Klee One", serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .col h3::before {
+    content: "●";
+    color: var(--blue);
+    margin-right: 6px;
+    font-size: 16px;
+  }
+  .col .en { font-size: 28px; line-height: 2.2; }
+  .col .verb { position: relative; }
+  .col .tag {
+    position: absolute;
+    left: 50%; top: 100%;
+    transform: translateX(-30%);
+    font-family: "Klee One", serif;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--blue);
+    white-space: nowrap;
+  }
+  .col .ja { flex: 1; margin-top: 14px; font-size: 15px; line-height: 1.8; }
+  .col .bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .col svg { width: 90px; height: auto; flex-shrink: 0; }
+
+  .closing { text-indent: 1em; }
+
+  /* ===== 脚注 ===== */
+  .footnote {
+    margin-top: 40px;
+    border-top: 4px solid #ddd;
+    padding-top: 10px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.7;
+  }
+  .footnote .term {
+    flex-shrink: 0;
+    border: 1.5px solid #333;
+    padding: 2px 8px;
+    transform: rotate(-6deg);
+    font-weight: 700;
+    font-size: 12px;
+    background: #fff;
+    box-shadow: 2px 2px 0 #333;
+  }
+  .footnote .term::before { content: "● "; color: var(--yellow); }
+  .page-num {
+    position: absolute;
+    left: 40px; bottom: 16px;
+    font-size: 13px;
+    color: #444;
+  }
+
+  @media (max-width: 640px) {
+    .page { padding: 32px 18px 40px 38px; }
+    .page::before { width: 14px; }
+    .title { font-size: 28px; }
+    .badge { width: 68px; height: 68px; font-size: 28px; }
+    .bubble { font-size: 28px; margin-left: 0; padding: 8px 22px; }
+    .wish, .compare { grid-template-columns: 1fr; }
+    .wish .caption { padding: 40px 0 0 0; }
+    .compare::before { display: none; }
+    .col + .col { border-top: 3px dashed var(--blue); padding-top: 18px; margin-top: 18px; }
+    .page-num { left: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="header">
+    <span class="lesson-label">LESSON</span>
+    <div class="badge">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <path fill="#ffe94d" stroke="#e8c900" stroke-width="1.5"
+          d="M50 3 L57 10 L66 6 L71 14 L81 13 L82 23 L91 27 L88 36 L96 43 L90 50 L96 57 L88 64 L91 73 L82 77 L81 87 L71 86 L66 94 L57 90 L50 97 L43 90 L34 94 L29 86 L19 87 L18 77 L9 73 L12 64 L4 57 L10 50 L4 43 L12 36 L9 27 L18 23 L19 13 L29 14 L34 6 L43 10 Z"/>
+      </svg>
+      <span>113</span>
+    </div>
+    <h1 class="title">「仮定法」とは？</h1>
+  </header>
+  <div class="subtitle">仮定法の基本／ <i>What is “Subjunctive”?</i></div>
+
+  <div class="body">
+    <p>このレッスンから、仮定法を学んでいきましょう。</p>
+
+    <p>仮定法は、<span class="hl">事実とは異なること</span>を表すための言い方です。かなわない願いや、実際には起こりえない想像を話すとき、英語では<span class="hl">今のことでも過去形を使って</span>表現します。</p>
+
+    <!-- 図1：願望 -->
+    <div class="box wish">
+      <div class="bubble hand-en">
+        I wish I <span class="red-u">could</span> fly.
+        <span class="arrow-note">過去形がポイント！</span>
+      </div>
+      <div class="caption">
+        空を飛べたらなあ。<br>
+        <span class="note-blue">（※実際には飛べない）</span>
+      </div>
+      <svg viewBox="0 0 300 160" aria-label="空と飛行機を眺める人のイラスト">
+        <rect x="0" y="0" width="300" height="160" rx="6" fill="#e6f3fb"/>
+        <path d="M0 105 Q80 92 160 100 T300 98 V160 H0Z" fill="#9fcbe6"/>
+        <path d="M200 160 Q220 110 260 112 Q300 110 300 130 V160Z" fill="#6bb06a"/>
+        <rect x="120" y="96" width="6" height="10" fill="#bbb"/><rect x="128" y="92" width="5" height="14" fill="#ccc"/><rect x="135" y="98" width="7" height="8" fill="#bbb"/>
+        <!-- 飛行機 -->
+        <line x1="150" y1="34" x2="210" y2="34" stroke="#333" stroke-width="2"/>
+        <path d="M218 34 l14 -2 l4 2 l-4 2z M224 34 l-4 -8 h3 l6 8 l-6 8 h-3z" fill="#555"/>
+        <!-- 手すり -->
+        <line x1="0" y1="130" x2="200" y2="122" stroke="#333" stroke-width="3"/>
+        <!-- 人物 -->
+        <circle cx="70" cy="95" r="22" fill="#fbe0c8" stroke="#333" stroke-width="2"/>
+        <path d="M48 92 Q52 64 76 70 Q94 76 92 100 L90 120 Q82 104 84 92 Q70 84 52 104Z" fill="#7a4a2a"/>
+        <path d="M44 160 Q46 126 70 122 Q96 126 98 160Z" fill="#f2b84b" stroke="#333" stroke-width="2"/>
+        <circle cx="62" cy="96" r="2" fill="#333"/>
+        <path d="M62 106 q4 3 8 0" stroke="#333" stroke-width="1.6" fill="none"/>
+      </svg>
+    </div>
+
+    <p>あえて過去形にすることで、「本当はそうではないんだけど」という気持ちを、聞き手にさりげなく伝えることができます。</p>
+
+    <p>ただし、if（もし〜なら）が入っていれば何でも仮定法、というわけではありません。今の話なのに<span class="hl">過去形</span>を使っている――そこが「現実とは違う」という合図になっているのが仮定法です。</p>
+
+    <!-- 図2：比較 -->
+    <div class="box compare">
+      <div class="col">
+        <h3>ふつうの if の文</h3>
+        <div class="en hand-en">
+          If I <span class="verb"><span class="red-u">have</span><span class="tag">←現在形</span></span> money,<br>
+          I'll buy it.
+        </div>
+        <div class="bottom">
+          <div class="ja">
+            お金があれば買います。<br>
+            <span class="note-blue">（※条件を述べているだけ）</span>
+          </div>
+          <svg viewBox="0 0 110 100" aria-label="財布を確認する人">
+            <circle cx="40" cy="38" r="20" fill="#fbe0c8" stroke="#333" stroke-width="2"/>
+            <path d="M22 30 Q40 10 58 30" fill="#aaa"/>
+            <circle cx="33" cy="38" r="1.8" fill="#333"/><circle cx="47" cy="38" r="1.8" fill="#333"/>
+            <path d="M10 100 Q12 64 40 60 Q68 64 70 100Z" fill="#2f5aa8" stroke="#333" stroke-width="2"/>
+            <rect x="28" y="72" width="26" height="16" rx="3" fill="#7a4a2a" stroke="#333"/>
+            <circle cx="92" cy="80" r="12" fill="#fff" stroke="#333" stroke-width="2"/>
+            <text x="92" y="84" font-size="10" text-anchor="middle" fill="#333">¥</text>
+          </svg>
+        </div>
+      </div>
+      <div class="col">
+        <h3>仮定法の文</h3>
+        <div class="en hand-en">
+          If I <span class="verb"><span class="red-u">had</span><span class="tag">過去形</span></span> money,<br>
+          I would buy it.
+        </div>
+        <div class="bottom">
+          <svg viewBox="0 0 110 100" aria-label="ほしそうに眺める人">
+            <circle cx="55" cy="38" r="20" fill="#fbe0c8" stroke="#333" stroke-width="2"/>
+            <path d="M36 32 Q55 12 74 32" fill="#5a3a22"/>
+            <path d="M46 38 h5 M59 38 h5" stroke="#333" stroke-width="1.8"/>
+            <path d="M50 48 q5 -3 10 0" stroke="#333" stroke-width="1.6" fill="none"/>
+            <path d="M25 100 Q27 64 55 60 Q83 64 85 100Z" fill="#4c9a5a" stroke="#333" stroke-width="2"/>
+            <text x="80" y="20" font-size="10" fill="#333" writing-mode="tb">ほしい〜</text>
+          </svg>
+          <div class="ja">
+            お金があったら買うのに。<br>
+            <span class="note-blue">（※実際にはお金がない）</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="closing">次のレッスンから、具体的な使い方を見ていきます。</p>
+  </div>
+
+  <div class="footnote">
+    <span class="term">文法用語</span>
+    <span>今のことを過去形で表すこの形を「仮定法過去」と呼びます。現在の事実に反する内容や願望であることを示す目印になります。if を使わない文で用いられることもあります。</span>
+  </div>
+
+  <div class="page-num">286</div>
+</div>
+</body>
+</html>
