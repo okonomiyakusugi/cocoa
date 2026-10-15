@@ -86,7 +86,7 @@
     margin-top: 6px;
     letter-spacing: .05em;
   }
-  .subtitle i { font-family: Georgia, serif; }
+  .subtitle i { font-family: "Zen Maru Gothic", sans-serif; }
 
   /* ===== 本文 ===== */
   .body p {
@@ -243,6 +243,26 @@
     left: 40px; bottom: 16px;
     font-size: 13px;
     color: #444;
+  }
+
+  @page { size: A4; margin: 0; }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { max-width: none; width: 210mm; height: 297mm; overflow: hidden; margin: 0; box-shadow: none; padding: 12mm 14mm 10mm 20mm; }
+    .header { gap: 10px; }
+    .badge { width: 76px; height: 76px; font-size: 34px; }
+    .title { font-size: 34px; }
+    .body p { font-size: 14.5px; line-height: 1.9; margin: 14px 0; }
+    .box { margin: 12px 0; padding: 16px 22px; break-inside: avoid; }
+    .bubble { font-size: 33px; padding: 6px 30px; }
+    .wish .caption { font-size: 15px; padding-top: 34px; }
+    .wish svg { max-height: 150px; }
+    .col h3 { font-size: 18px; }
+    .col .en { font-size: 25px; }
+    .col .ja { font-size: 14px; }
+    .footnote { margin-top: 18px; font-size: 11px; }
+    .page-num { bottom: 10mm; left: 9mm; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
 
   @media (max-width: 640px) {
